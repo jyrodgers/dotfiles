@@ -16,11 +16,14 @@ execute 'autocmd VimEnter *' a:exec
 endif
 endfunction
 
-"if has('nvim')
-  call plug#begin('~/.local/share/nvim/plugged') " vim-plug, a minimalist Vim plugin manager. https://github.com/junegunn/vim-plug
-"else
-"call plug#begin('~/.vim/plugged') " vim-plug, a minimalist Vim plugin manager. https://github.com/junegunn/vim-plug
-"endif
+"======================================
+" Vim Plug:
+" https://github.com/junegunn/vim-plug A minimalist Vim plugin manager.
+"======================================
+
+" Installation
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.local/share/nvim/plugged')
 
 """""""""""""""""""""""
 " Experimental Plugins
@@ -47,10 +50,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'towolf/vim-helm'
 
 
-" Dockerfile.vim
-" https://github.com/ekalinin/Dockerfile.vim
-" Vim syntax file for Docker's Dockerfile
-Plug 'ekalinin/Dockerfile.vim'
 
 "======================================
 " abolish
@@ -220,6 +219,14 @@ let g:deoplete#sources._ = ['neosnippet', 'tag', 'buffer', 'member', 'tabnine', 
 
 "======================================
 " EasyAlign
+" Dockerfile:
+" https://github.com/ekalinin/Dockerfile.vim
+" Vim syntax file for Docker's Dockerfile
+"======================================
+
+Plug 'ekalinin/Dockerfile.vim'
+
+"======================================
 " https://github.com/junegunn/vim-easy-align
 " easy-to-use plugin to align text .
 "======================================
@@ -363,7 +370,7 @@ let g:neosnippet#disable_runtime_snippets = {
 		\ }
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/Git/neosnippet-snippets/neosnippets'
+let g:neosnippet#snippets_directory='~/Git/neosnippets/neosnippets'
 
 "======================================
 " Nerdtree
