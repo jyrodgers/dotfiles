@@ -39,7 +39,7 @@ setopt auto_cd
 # . /usr/local/etc/profile.d/z.sh
 
 # z.lua
-eval "$(lua ~/.local/share/chezmoi/z_lua/z.lua --init enhanced fzf zsh)"
+eval "$(lua ~/Git/z_lua/z.lua --init enhanced fzf zsh)"
 export _ZL_ECHO=1
 
 
