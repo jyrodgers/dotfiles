@@ -359,7 +359,7 @@ let g:neosnippet#disable_runtime_snippets = {
 		\ }
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/Git/neosnippet-snippets/neosnippets'
+let g:neosnippet#snippets_directory='~/Git/neosnippets/neosnippets'
 
 "======================================
 " Nerdtree:
