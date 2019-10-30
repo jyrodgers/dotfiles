@@ -44,6 +44,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'pearofducks/ansible-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'towolf/vim-helm'
 
 
 " Dockerfile.vim
