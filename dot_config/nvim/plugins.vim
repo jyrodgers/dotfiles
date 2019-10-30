@@ -47,6 +47,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'towolf/vim-helm'
 
 
+" Dockerfile.vim
+" https://github.com/ekalinin/Dockerfile.vim
+" Vim syntax file for Docker's Dockerfile
+Plug 'ekalinin/Dockerfile.vim'
 
 "======================================
 " Abolish:
