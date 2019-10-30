@@ -5,6 +5,18 @@ command! EnableNonCountedBasicMotions :call SetDisablingOfBasicMotionsIfNonCount
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""" initialize plugins
+function! PlugOnLoad(name, exec) abort
+if has_key(g:plugs, a:name) &&
+\ (has_key(
+\g:plugs[a:name], 'on') ||
+\has_key(g:plugs[a:name], 'for'))
+execute 'autocmd! User' a:name a:exec
+else
+execute 'autocmd VimEnter *' a:exec
+endif
+endfunction
+
 function! WordCount()
     let currentmode = mode()
     if !exists("g:lastmode_wc")
