@@ -35,9 +35,6 @@ call plug#begin('~/.local/share/nvim/plugged')
         \ 'branch': 'next',
         \ 'do': 'bash install.sh',
     \ }
-
-
-
 Plug 'junegunn/goyo.vim'
 Plug 'christoomey/vim-titlecase'
 Plug 'haya14busa/incsearch.vim'
@@ -52,7 +49,7 @@ Plug 'towolf/vim-helm'
 
 
 "======================================
-" abolish
+" Abolish:
 " https://github.com/tpope/vim-abolish
 " Work with variants of words.
 " Autocomplete commonly misspelled words
@@ -125,7 +122,7 @@ endfunction
 " Title Case (crt):       fooBar -> Foo Bar
 
 "======================================
-" Ack
+" Ack:
 " https://github.com/mileszs/ack.vim
 " allows you to search with ack from within Vim and shows the results in a split window.
 "======================================
@@ -137,7 +134,7 @@ endfunction
 " endif
 
 "======================================
-" ALE
+" ALE:
 " https://github.com/w0rp/ale
 " ALE (Asynchronous Lint Engine) is a plugin for providing linting
 "======================================
@@ -152,7 +149,7 @@ highlight link ALEErrorSign Title
 let g:ale_completion_enabled = 1| " Enable completion where available.
 
 "======================================
-" CamelCaseMotion
+" CamelCaseMotion:
 " https://github.com/bkad/CamelCaseMotion
 " Defines motions to move Camel-wise; i.e. to word boundaries, uppercase letters and underscores
 "======================================
@@ -166,13 +163,13 @@ sunmap b
 sunmap e
 
 "======================================
-" Colorschemes
+" Colorschemes:
 "======================================
 
 " Dracula: https://github.com/dracula/dracula-theme
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" An arctic, north-bluish clean and elegant Vim color theme.
+" Nord: An arctic, north-bluish clean and elegant Vim color theme.
 Plug 'arcticicestudio/nord-vim'
 
 " Gruvbox: Retro groove color scheme for Vim https://github.com/morhetz/gruvbox
@@ -191,7 +188,7 @@ Plug 'nightsense/snow'
 Plug 'altercation/vim-colors-solarized'
 
 "======================================
-" Commentary
+" Commentary:
 " https://github.com/tpope/vim-commentary
 " easily comment and uncomment using map and numbers
 "======================================
@@ -204,7 +201,7 @@ Plug 'tpope/vim-commentary'
 " You can also use numbers and motion keys
 
 "======================================
-" deoplete
+" Deoplete:
 " https://github.com/Shougo/deoplete.nvim
 " extensible and asynchronous auto-completion framework
 "======================================
@@ -218,7 +215,6 @@ let g:deoplete#sources = {}
 let g:deoplete#sources._ = ['neosnippet', 'tag', 'buffer', 'member', 'tabnine', 'LanguageClient']
 
 "======================================
-" EasyAlign
 " Dockerfile:
 " https://github.com/ekalinin/Dockerfile.vim
 " Vim syntax file for Docker's Dockerfile
@@ -227,6 +223,7 @@ let g:deoplete#sources._ = ['neosnippet', 'tag', 'buffer', 'member', 'tabnine', 
 Plug 'ekalinin/Dockerfile.vim'
 
 "======================================
+" EasyAlign:
 " https://github.com/junegunn/vim-easy-align
 " easy-to-use plugin to align text .
 "======================================
@@ -242,7 +239,7 @@ nmap ga <Plug>(EasyAlign)
 " activate EasyAlign (ga) followed by the character that you want to align with
 
 "======================================
-" Easy Motion
+" Easy Motion:
 " https://github.com/easymotion/vim-easymotion
 " highlights all possible choices and allows you to press one key to jump directly to a target letter.
 "======================================
@@ -257,7 +254,7 @@ let g:EasyMotion_space_jump_first = 1 | " jump to first match ('a') by pressing 
 " 3. type the highlighted character that is in the location that you want to jump to
 
 "======================================
-" fzf
+" Fzf:
 " https://github.com/junegunn/fzf.vim
 " a vim plugin for fzf
 "======================================
@@ -285,7 +282,7 @@ command! -bang -nargs=* Ag
   \                 <bang>0)
 
 "======================================
-" Gitgutter
+" Gitgutter:
 " https://github.com/airblade/vim-gitgutter
 " shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed
 "======================================
@@ -297,7 +294,7 @@ Plug 'airblade/vim-gitgutter'
 " The . command will work with both these if repeat.vim is installed.
 
 "======================================
-" Goyo
+" Goyo:
 " https://github.com/junegunn/goyo.vim
 " Distraction-free writing in Vim.
 "======================================
@@ -310,7 +307,7 @@ Plug 'junegunn/goyo.vim'
 " let g:goyo_linenr (default: 0)
 
 "======================================
-" indentLine
+" IndentLine:
 " https://github.com/Yggdroot/indentLine
 " displaying thin vertical lines at each indentation level for code indented with spaces.
 "======================================
@@ -352,7 +349,7 @@ let g:lightline = {
 \ }
 
 "======================================
-" neosnippet
+" Neosnippet:
 " https://github.com/Shougo/neosnippet.vim
 " support for snippets. Snippets are small templates for commonly used code that you can fill in on the fly.
 "======================================
@@ -373,7 +370,7 @@ let g:neosnippet#disable_runtime_snippets = {
 let g:neosnippet#snippets_directory='~/Git/neosnippets/neosnippets'
 
 "======================================
-" Nerdtree
+" Nerdtree:
 " https://github.com/scrooloose/nerdtree
 " a file system explorer
 "======================================
@@ -398,7 +395,7 @@ let g:NERDTreeIndicatorMapCustom = { "Modified": "✹", "Staged": "✚", "Untrac
 let g:NERDTreeWinSize=60|                             " set default split size
 
 "======================================
-" Nerdtree git plugin
+" Nerdtree Git:
 " https://github.com/Xuyuanp/nerdtree-git-plugin/blob/master/README.md
 " A plugin of NERDTree showing git status flags
 "======================================
@@ -418,7 +415,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 "======================================
-" RainbowParentheses
+" RainbowParentheses:
 " https://github.com/junegunn/rainbow_parentheses.vim
 " Easily identify matching parenthesis based on matching colors
 "======================================
@@ -428,21 +425,21 @@ let g:rainbow_active = 1
 
 
 "======================================
-" Repeat
+" Repeat:
 " https://github.com/tpope/vim-repeat
 " Repeat.vim remaps . in a way that plugins can tap into it.
 "======================================
 Plug 'tpope/vim-repeat'
 
 "======================================
-" Speeddating
+" Speeddating:
 " https://github.com/tpope/vim-speeddating
 " Speed Dating use CTRL-A/CTRL-X to increment dates, times, and more
 "======================================
 Plug 'tpope/vim-speeddating'
 
 "======================================
-" Surround
+" Surround:
 " https://github.com/tpope/vim-surround
 " provides mappings to easily delete, change and add surroundings characters in pairs.
 "======================================
@@ -480,7 +477,7 @@ let g:switch_custom_definitions =
     \ ]
 
 "======================================
-" TabNine
+" TabNine:
 " https://tabnine.com
 " TabNine is the all-language autocompleter. It uses machine learning to provide responsive, reliable, and relevant suggestions.
 "======================================
@@ -488,7 +485,7 @@ let g:switch_custom_definitions =
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 "======================================
-" tmux navigator
+" Tmux Navigator:
 " https://github.com/christoomey/vim-tmux-navigator
 " allows you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.
 "======================================
@@ -521,7 +518,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " bind-key -T copy-mode-vi C-\ select-pane -l
 
 "======================================
-" Yank Ring,
+" Yank Ring:
 " https://github.com/vim-scripts/YankRing.vim
 " Maintains a history of previous yanks, changes and deletes
 "======================================
