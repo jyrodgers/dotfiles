@@ -239,6 +239,9 @@ nmap ga <Plug>(EasyAlign)
 " highlights all possible choices and allows you to press one key to jump directly to a target letter.
 "======================================
 Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_keys = 'asdfghjkl'
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_space_jump_first = 1 | " jump to first match ('a') by pressing space
 
 " Instructions
 " 1. <leader>e to bring up Easy Motion menu.
