@@ -10,6 +10,10 @@ macos-settings-install:
 		./macOS-settings.sh
 	fi
 
+plug.vim-install:
+	curl -s -L https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > $$(chezmoi source-path ~/.local/share/nvim/site/autoload/plug.vim)
+
+
 snippets-install:
 	git ~/Git
 	git clone https://github.com/jyrodgers/neosnippet-snippets neosnippets
