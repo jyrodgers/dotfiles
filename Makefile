@@ -13,3 +13,7 @@ snippets-install:
 	git ~/Git
 	git clone https://github.com/jyrodgers/neosnippet-snippets neosnippets
 
+terminal-vim-install:
+	if [ -d "/Applications" ]; then
+		cp ~/.local/share/chezmoi/etc/TerminalVim.app /Applications
+	fi
