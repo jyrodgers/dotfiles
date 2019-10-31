@@ -1,9 +1,9 @@
-all: brew-install snippets-install z-install
-
 brew-install:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	cd ~/.local/share/chezmoi/etc
 	brew bundle
+
+install: brew-install macos-settings-install plug.vim-install snippets-install terminal-vim-install z-install
 
 macos-settings-install:
 	ifeq ($(UNAME_S),Darwin)
