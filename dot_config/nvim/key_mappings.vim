@@ -39,8 +39,8 @@ autocmd Filetype markdown nnoremap <buffer> <silent> <leader>C :call ToggleCheck
 " nmap <Leader>e <Leader><Leader>s| " trigger easy motion
 
 " EasyMotion
-map  <Leader>e <Plug>(easymotion-bd-f)|       " Move to character with EasyMotion
-nmap <Leader>e <Plug>(easymotion-overwin-f)|  " Move to character with EasyMotion
+map  <Leader>; <Plug>(easymotion-bd-f)|       " Move to character with EasyMotion
+nmap <Leader>; <Plug>(easymotion-overwin-f)|  " Move to character with EasyMotion
 " map  <Leader>ew <Plug>(easymotion-bd-w)|" Move to word with EasyMotion
 " nmap <Leader>ew <Plug>(easymotion-overwin-w)|" Move to word with EasyMotion
 " map <Leader>el <Plug>(easymotion-bd-jk)|" Move to line with EasyMotion
