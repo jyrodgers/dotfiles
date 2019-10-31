@@ -1,2 +1,3 @@
 #eval "$(lua ~/Git/dotfiles/z_lua/z.lua --init bash)"
+alias z="zsh"
 EDITOR=nvim
