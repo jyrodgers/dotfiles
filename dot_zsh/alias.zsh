@@ -136,3 +136,9 @@ alias treet='tree -t' # sort by last modification date
 alias treel='tree -L' # max depth
 alias treeo='tree -o' # output to file 
 
+# z.lua
+alias zz='z -c'      # restrict matches to subdirs of $PWD
+alias zi='z -i'      # cd with interactive selection
+alias zf='z -I'      # use fzf to select in multiple matches
+alias zb='z -b'      # quickly cd to the parent directoryexport BROWSER=w3m
+

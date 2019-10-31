@@ -8,7 +8,6 @@ export MPSS=$P4PATH/Afterburner/Technical/Software/code/smac/dev
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/fzf:/usr/local/opt/bison/bin:/go/bin/:/usr/local/opt/sphinx-doc/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
 
 export SSH_KEY_PATH="~/.ssh/rsa_id"
