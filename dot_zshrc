@@ -1,28 +1,11 @@
-export P4CONFIG=.p4config
-# For building SMAC image
-export P4PATH=/home/jyrodgers/Perforce/jyrodgers_vcamacdev01_5739
-export CONFD=$P4PATH/LeapFrog/Technical/Software/cots/Tail-f/confd-6.4.2/x86_64
-export AB_COMMON_SRC=$P4PATH/Afterburner/Technical/Software/code/common
-export COMMON_SRC=$P4PATH/LeapFrog/Technical/Software/code/common
-export MPSS=$P4PATH/Afterburner/Technical/Software/code/smac/dev
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/fzf:/usr/local/opt/bison/bin:/go/bin/:/usr/local/opt/sphinx-doc/bin:$PATH
-
 
 autoload -Uz compinit
 compinit
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-export EDITOR='nvim'
-
-
-
 # Append history list to the history file; this is the default but we make sure
 # because it's required for share_history.
 setopt append_history
-
 setopt inc_append_history
-
 
 # Import new commands from the history file also in other zsh-session.
 setopt share_history
@@ -38,306 +21,10 @@ setopt hist_ignore_all_dups
 # command is the name of a directory, perform the cd command to that directory.
 setopt auto_cd
 
-# z.sh
-# https://github.com/rupa/z
-# . ~/Git/z/z.sh
-# . /home/jyrodgers/Git/z/z.sh
-# . /usr/local/etc/profile.d/z.sh
-
-# z.lua
-eval "$(lua ~/Git/z_lua/z.lua --init enhanced fzf zsh)"
-export _ZL_ECHO=1
-
-
-alias zz='z -c'      # restrict matches to subdirs of $PWD
-alias zi='z -i'      # cd with interactive selection
-alias zf='z -I'      # use fzf to select in multiple matches
-alias zb='z -b'      # quickly cd to the parent directoryexport BROWSER=w3m
-
-if (( $+commands[tag] )); then
-  export TAG_SEARCH_PROG=ag  # replace with rg for ripgrep
-  tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
-  alias ag=tag  # replace with rg for ripgrep
-fi
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
-#source " $HOME/Git/gruvbox/gruvbox_256palette.sh"
-
-
-###############################################################################
-# Functions
-###############################################################################
-
-# Cheat.sh
-function cheat() { curl cht.sh/$1 }
-
-# make directory and enter it
-mkcd() { mkdir -p "$@" && cd "$@"; }
-
-# usage: `hibp email@example.com`
-hibp() { curl -fsS "https://haveibeenpwned.com/api/v2/breachedaccount/$1" | jq -r 'sort_by(.BreachDate)[] | [.Title,.Domain,.BreachDate,.PwnCount] | @tsv' | column -t -s$'\t'}
-
-#####
-# $ tryssh user@host [-p [port]]
-# $ tryssh host_in_sshconfig
-# Wait for a server to come back online and then ssh into it.
-# Uses the .ssh/config database to find saved info.
-# Additional pararms such as -p can be specified and will be
-# passed onto ssh
-#####
-function tryssh {
-    # Full user@host passed on the command line
-    local host="$1";
-    # Just the hostname
-    local hostname;
-    # Username extracted from ssh -G
-    local user;
-    # Port determined from ssh -G
-    local port;
-
-    # Alternative method of extracting user/host via GNU sed
-    #   username=$(gsed -rn 's/([a-zA-Z0-9-]+)@?(.*)/\1/p' <<< "$1")
-    #   pipe into wc -c; if > 1 then there's a host/user
-    #   hostname=$(gsed -rn 's/([a-zA-Z0-9-]+)@?(.*)/\2/p' <<< "$1")
-
-    # Check what username / host / port we would use
-    local sdbo=$(ssh -G "$host")
-    hostname=$(awk '/^hostname / { print $2 }' <<< "$sdbo")
-    user=$(awk '/^user / { print $2 }' <<< "$sdbo")
-    port=$(awk '/^port / { print $2 }' <<< "$sdbo")
-
-    echo "Waiting for ${user}@${hostname} on port ${port} to come back online"
-    ping -o "$hostname" > /dev/null # ping -o = exit after getting a reply
-    echo "Host ${hostname} appears online."
-    sleep 1
-    # disable strict host key checking, in the event this is a server being re-installed
-    # avoids stupid "host not trusted error"
-    local extra_args=""
-    extra_args+="-o UserKnownHostsFile=~/.ssh/known_hosts"
-    extra_args+="-o StrictHostKeyChecking=no"
-    extra_args+="-o ConnectTimeout=3 "
-    # pass any additional arguments to ssh, e.g. -p 1234
-    ssh $extra_args "$host" ${@:2}
-    if [[ "$?" -ne 0 ]]; then
-        echo "SSH returned non-zero code. Re-trying"
-        tryssh "$@"
-    fi
-}
-
-function weather() {
-  if [[ -z "$1" ]]; then
-      curl wttr.in/mountain_view
-  else
-    args="$@"
-    # Replace spaces with underscores.
-    curl wttr.in/"${args:gs/ /_/}"
-  fi
-}
-
-
-
-
-# # Find history events by search pattern and list them by date.
-# function whatwhen () {
-#   emulate -L zsh
-#   local usage help ident format_l format_s first_char remain first last
-#   usage='USAGE: whatwhen [options] <searchstring> <search range>'
-#   help='Use `whatwhen -h'\'' for further explanations.'
-#   ident=${(l,${#${:-Usage: }},, ,)}
-#   format_l="${ident}%s\t\t\t%s\n"
-#   format_s="${format_l//(\\t)##/\\t}"
-#   # Make the first char of the word to search for case
-#   # insensitive; e.g. [aA]
-#   first_char=[${(L)1[1]}${(U)1[1]}]
-#   remain=${1[2,-1]}
-#   # Default search range is `-100'.
-#   first=${2:-\-100}
-#   # Optional, just used for `<first> <last>' given.
-#   last=$3
-#   case $1 in
-#     ("")
-#       printf '%s\n\n' 'ERROR: No search string specified. Aborting.'
-#       printf '%s\n%s\n\n' ${usage} ${help} && return 1
-#       ;;
-#     (-h)
-#       printf '%s\n\n' ${usage}
-#       print 'OPTIONS:'
-#       printf $format_l '-h' 'show help text'
-#       print '\f'
-#       print 'SEARCH RANGE:'
-#       printf $format_l "'0'" 'the whole history,'
-#       printf $format_l '-<n>' 'offset to the current history number; (default: -100)'
-#       printf $format_s '<[-]first> [<last>]' 'just searching within a give range'
-#       printf '\n%s\n' 'EXAMPLES:'
-#       printf ${format_l/(\\t)/} 'whatwhen grml' '# Range is set to -100 by default.'
-#       printf $format_l 'whatwhen zsh -250'
-#       printf $format_l 'whatwhen foo 1 99'
-#       ;;
-#     (\?)
-#       printf '%s\n%s\n\n' ${usage} ${help} && return 1
-#       ;;
-#     (*)
-#       # -l list results on stout rather than invoking $EDITOR.
-#       # -i Print dates as in YYYY-MM-DD.
-#       # -m Search for a - quoted - pattern within the history.
-#       fc -li -m "*${first_char}${remain}*" $first $last
-#       ;;
-#   esac
-# }
-###############################################################################
-# Alias'
-###############################################################################
-
-# Terminal
-alias  ..='cd ..'
-alias ...='cd ../..'
-alias cls="clear && ls"
-alias cp='cp -iv'
-alias cwd='pwd | tr -d "\n" | pbcopy && pwd'
-alias h="cd -"
-alias mv='mv -iv'
-alias sudo="sudo --preserve-env"
-alias n="nnn"
-
-alias cask_folder='/usr/local/Caskroom'
-alias brew_folder='/usr/local/Cellar'
-
-# Git
-alias gad='git add'
-alias gcl='git clone'
-alias gcm='git commit'
-alias gco='git checkout'
-alias gcom='git checkout master'
-alias gpl='git pull'
-alias gps='git push'
-
-# Tmux
-alias ta='tmux attach -t'
-alias tn='tmux new -s'
-alias tls='tmux ls'
-
-# instead of this use that
-
-if (( $+commands[bat] )); then
-  alias cat=bat
-fi
-
-
-if (( $+commands[fd] )); then
-  alias find="fd"
-fi
-
-if (( $+commands[atool] )); then
-  alias extract='atool -x'
-fi
-
-# Brew
-if (( $+commands[brew] )); then
-  alias bi='brew install'
-  alias bu='brew upgrade'
-fi
-
-# mach3
-alias flmacbuild='make developer=env.developer application=flmac build'
-alias flmacdeploy='make developer=env.developer application=flmac deploy'
-alias tmacbuild='make developer=env.developer application=tmac build'
-alias tmacdeploy='make developer=env.developer application=tmac deploy'
-
-# Vim
-#alias v='nvim'
-if (( $+commands[nvim] )); then
-  alias v=nvim  # replace with rg for ripgrep
-  alias vim=nvim  # replace with rg for ripgrep
-else
-  alias v=vim
-fi
-
-# Docker
-alias d="docker"
-alias db="docker build"
-alias dbnc="docker build --no-cache"
-alias dr="docker run"
-
-# Helm
-
-alias hdl="helm delete"
-alias hf="helm fetch"
-alias hi="helm install"
-alias hl="helm list"
-alias hld="helm list --deployed"
-
-# kubectl
-
-alias k='kubectl'
-alias kc='kubectl create -f'
-alias kdl='kubectl delete'
-alias kdld='kubectl delete deployment'
-alias kdlp='kubectl delete pod'
-alias kdlpa='kubectl delete pod --all-namespaces'
-alias kdlpv='kubectl delete pv'
-alias kdlpvc='kubectl delete pvc'
-alias kdlsa='kubectl delete serviceaccount'
-alias kdlsc='kubectl delete storageclass'
-alias kds='kubectl describe'
-alias kdsd='kubectl describe deployment'
-alias kdsp='kubectl describe pod'
-alias kdspv='kubectl describe pv'
-alias kdspvc='kubectl describe pvc'
-alias kdssc='kubectl describe storageclass'
-alias ke='f() { kubectl exec -it $1 /bin/bash };f'
-alias kg='kubectl get'
-alias kgd='kubectl get deployment'
-alias kgda='kubectl get deployment --all-namespaces'
-alias kgp='kubectl get pod'
-alias kgpa='kubectl get pod --all-namespaces'
-alias kgpva='kubectl get pv --all-namespaces'
-alias kgpv='kubectl get pv'
-alias kgpvca='kubectl get pvc --all-namespaces'
-alias kgpvc='kubectl get pvc'
-alias kgsc='kubectl get serviceaccount --all-namespaces'
-alias kgsca='kubectl get serviceaccount'
-alias kgsca='kubectl get storageclass --all-namespaces'
-alias kgsc='kubectl get storageclass'
-
-## pods
-
-## logs
-
-## nodes
-
-#zsh
-# alias prev='fzf --preview 'bat --color \'always\' {}''
-# alias ls='ls -la | grep "^d" && ls -la | grep -v "^d"'
-alias ls1='ls -1'
-alias lss='ls -haltr'
-alias lsa='ls -a'
-alias lsl='ls -l'
-alias lsla='ls -la'
-alias ez='exec zsh'
-
-alias treed='tree -d' # list only directories
-alias trees='tree -v' # sort by version
-alias treer='tree -r' # sort by reverse alphabet order
-alias treet='tree -t' # sort by last modification date
-alias treel='tree -L' # max depth
-alias treeo='tree -o' # output to file 
-
-# vi mode
-
-# handy keybindings
-
-
-#map alternate escape key
-#bindkey -M viins 'jk' vi-cmd-mode
-
-#bindkey ‘^R’ history-incremental-search-backward
-
-
-
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -387,11 +74,6 @@ alias treeo='tree -o' # output to file
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=( copydir copyfile docker git gitfast helm terraform vi-mode )
 # export ZSH=/Users/jyrodgers/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -413,7 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -423,14 +104,5 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-###############################################################################
-# fzf
-###############################################################################
 
-# use fzf
-# fzf zsh config file
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+for f in  ~/.zsh/*(DN); do source $f; done

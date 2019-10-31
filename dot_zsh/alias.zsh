@@ -1,0 +1,138 @@
+###############################################################################
+# Alias'
+###############################################################################
+
+# Terminal
+alias  ..='cd ..'
+alias ...='cd ../..'
+alias cls="clear && ls"
+alias cp='cp -iv'
+alias cwd='pwd | tr -d "\n" | pbcopy && pwd'
+alias h="cd -"
+alias mv='mv -iv'
+alias sudo="sudo --preserve-env"
+alias n="nnn"
+
+alias cask_folder='/usr/local/Caskroom'
+alias brew_folder='/usr/local/Cellar'
+
+# Git
+alias gad='git add'
+alias gcl='git clone'
+alias gcm='git commit'
+alias gco='git checkout'
+alias gcom='git checkout master'
+alias gpl='git pull'
+alias gps='git push'
+
+# Tmux
+alias ta='tmux attach -t'
+alias tn='tmux new -s'
+alias tls='tmux ls'
+
+# instead of this use that
+
+if (( $+commands[bat] )); then
+  alias cat=bat
+fi
+
+
+if (( $+commands[fd] )); then
+  alias find="fd"
+fi
+
+if (( $+commands[atool] )); then
+  alias extract='atool -x'
+fi
+
+# Brew
+if (( $+commands[brew] )); then
+  alias bi='brew install'
+  alias bu='brew upgrade'
+fi
+
+# mach3
+alias flmacbuild='make developer=env.developer application=flmac build'
+alias flmacdeploy='make developer=env.developer application=flmac deploy'
+alias tmacbuild='make developer=env.developer application=tmac build'
+alias tmacdeploy='make developer=env.developer application=tmac deploy'
+
+# Vim
+#alias v='nvim'
+if (( $+commands[nvim] )); then
+  alias v=nvim  # replace with rg for ripgrep
+  alias vim=nvim  # replace with rg for ripgrep
+else
+  alias v=vim
+fi
+
+# Docker
+alias d="docker"
+alias db="docker build"
+alias dbnc="docker build --no-cache"
+alias dr="docker run"
+
+# Helm
+
+alias hdl="helm delete"
+alias hf="helm fetch"
+alias hi="helm install"
+alias hl="helm list"
+alias hld="helm list --deployed"
+
+# kubectl
+
+alias k='kubectl'
+alias kc='kubectl create -f'
+alias kdl='kubectl delete'
+alias kdld='kubectl delete deployment'
+alias kdlp='kubectl delete pod'
+alias kdlpa='kubectl delete pod --all-namespaces'
+alias kdlpv='kubectl delete pv'
+alias kdlpvc='kubectl delete pvc'
+alias kdlsa='kubectl delete serviceaccount'
+alias kdlsc='kubectl delete storageclass'
+alias kds='kubectl describe'
+alias kdsd='kubectl describe deployment'
+alias kdsp='kubectl describe pod'
+alias kdspv='kubectl describe pv'
+alias kdspvc='kubectl describe pvc'
+alias kdssc='kubectl describe storageclass'
+alias ke='f() { kubectl exec -it $1 /bin/bash };f'
+alias kg='kubectl get'
+alias kgd='kubectl get deployment'
+alias kgda='kubectl get deployment --all-namespaces'
+alias kgp='kubectl get pod'
+alias kgpa='kubectl get pod --all-namespaces'
+alias kgpva='kubectl get pv --all-namespaces'
+alias kgpv='kubectl get pv'
+alias kgpvca='kubectl get pvc --all-namespaces'
+alias kgpvc='kubectl get pvc'
+alias kgsc='kubectl get serviceaccount --all-namespaces'
+alias kgsca='kubectl get serviceaccount'
+alias kgsca='kubectl get storageclass --all-namespaces'
+alias kgsc='kubectl get storageclass'
+
+## pods
+
+## logs
+
+## nodes
+
+#zsh
+# alias prev='fzf --preview 'bat --color \'always\' {}''
+# alias ls='ls -la | grep "^d" && ls -la | grep -v "^d"'
+alias ls1='ls -1'
+alias lss='ls -haltr'
+alias lsa='ls -a'
+alias lsl='ls -l'
+alias lsla='ls -la'
+alias ez='exec zsh'
+
+alias treed='tree -d' # list only directories
+alias trees='tree -v' # sort by version
+alias treer='tree -r' # sort by reverse alphabet order
+alias treet='tree -t' # sort by last modification date
+alias treel='tree -L' # max depth
+alias treeo='tree -o' # output to file 
+
