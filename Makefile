@@ -8,3 +8,8 @@ macos-settings-install:
 	ifeq ($(UNAME_S),Darwin)
 		./macOS-settings.sh
 	fi
+
+snippets-install:
+	git ~/Git
+	git clone https://github.com/jyrodgers/neosnippet-snippets neosnippets
+
