@@ -23,6 +23,10 @@ terminal-vim-install:
 		cp ~/.local/share/chezmoi/etc/TerminalVim.app /Applications
 	fi
 
+update-all:
+	chezmoi apply
+	vim -c PlugUpdate -c qa
+
 z-install:
 	git ~/Git/
 	git clone https://github.com/skywind3000/z.lua.git z_lua
