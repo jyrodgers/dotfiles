@@ -19,11 +19,11 @@ alias brew_folder='/usr/local/Cellar'
 # Git
 alias gad='git add'
 alias gcl='git clone'
-alias gcm='git commit'
-alias gco='git checkout'
-alias gcom='git checkout master'
-alias gpl='git pull'
-alias gps='git push'
+alias gco='git commit'
+alias gch='git checkout'
+# alias gcom='git checkout master'
+alias gpul='git pull'
+alias gpus='git push'
 
 # Tmux
 alias ta='tmux attach -t'
