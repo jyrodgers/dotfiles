@@ -24,14 +24,8 @@ setopt hist_ignore_all_dups
 # command is the name of a directory, perform the cd command to that directory.
 setopt auto_cd
 
-# z.sh
-# https://github.com/rupa/z
-# . ~/Git/z/z.sh
-# . /home/jyrodgers/Git/z/z.sh
-# . /usr/local/etc/profile.d/z.sh
-
-
-
+HISTSIZE=25000
+SAVEHIST=25000
 
 
 #source " $HOME/Git/gruvbox/gruvbox_256palette.sh"
