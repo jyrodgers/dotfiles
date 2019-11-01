@@ -121,12 +121,19 @@ alias kgsc='kubectl get storageclass'
 
 #zsh
 # alias prev='fzf --preview 'bat --color \'always\' {}''
-# alias ls='ls -la | grep "^d" && ls -la | grep -v "^d"'
-alias ls1='ls -1'
-alias lss='ls -haltr'
-alias lsa='ls -a'
-alias lsl='ls -l'
-alias lsla='ls -la'
+
+which exa 2>&1 > /dev/null
+if [[ $? -eq 0 ]]; then
+    # Override default oh-my-zsh directories aliases with exa ones
+    # https://the.exa.website/
+    # unalias l
+    # unalias ls
+    # unalias lsa
+    alias l='exa'
+    alias ls='exa'
+    alias ll='exa -l'
+    alias la='exa -la'
+fi
 alias ez='exec zsh'
 
 alias treed='tree -d' # list only directories
