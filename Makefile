@@ -15,8 +15,7 @@ plug.vim-install:
 
 
 snippets-install:
-	git ~/Git
-	git clone https://github.com/jyrodgers/neosnippet-snippets neosnippets
+	cd ~/Git && git clone https://github.com/jyrodgers/neosnippet-snippets neosnippets
 
 terminal-vim-install:
 	if [ -d "/Applications" ]; then
@@ -28,5 +27,14 @@ update-all:
 	vim -c PlugUpdate -c qa
 
 z-install:
-	git ~/Git/
-	git clone https://github.com/skywind3000/z.lua.git z_lua
+	cd ~/Git/ && git clone https://github.com/skywind3000/z.lua.git z_lua
+
+zsh:
+	sh -c $(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
+
+python:
+	python3 -m pip install --user --upgrade pynvim :UpdateRemotePlugins
+	# Run :UpdateRemotePlugins in vim
+
+fzf:
+	$(brew --prefix)/opt/fzf/install

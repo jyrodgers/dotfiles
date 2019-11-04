@@ -27,7 +27,6 @@ setopt auto_cd
 HISTSIZE=25000
 SAVEHIST=25000
 
-
 #source " $HOME/Git/gruvbox/gruvbox_256palette.sh"
 
 
