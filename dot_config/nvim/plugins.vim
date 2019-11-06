@@ -477,6 +477,33 @@ let g:switch_custom_definitions =
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 "======================================
+" Taskpaper:
+" https://github.com/davidoc/taskpaper.vim
+" syntax file and a file-type plugin for the simple format used by the TaskPaper application
+"======================================
+
+Plug 'davidoc/taskpaper.vim'
+let g:task_paper_date_format = "%Y-%m-%d %H:%M"
+
+" The plugin defines some new mappings:
+
+"     \td     Mark task as done
+"     \tx     Mark task as cancelled
+"     \tt     Mark task as today
+"     \tD     Archive @done items
+"     \tX     Show tasks marked as cancelled
+"     \tT     Show tasks marked as today
+"     \t/     Search for items including keyword
+"     \ts     Search for items including tag
+"     \tp     Fold all projects
+"     \t.     Fold all notes
+"     \tP     Focus on the current project
+"     \tj     Go to next project
+"     \tk     Go to previous project
+"     \tg     Go to specified project
+"     \tm     Move task to specified project
+
+"======================================
 " Tmux Navigator:
 " https://github.com/christoomey/vim-tmux-navigator
 " allows you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.
