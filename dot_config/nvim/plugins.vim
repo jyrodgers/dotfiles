@@ -33,6 +33,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'pearofducks/ansible-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'towolf/vim-helm'
+Plug 'rhysd/committia.vim'
 
 
 " Dockerfile.vim
