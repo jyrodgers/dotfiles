@@ -90,4 +90,5 @@ autocmd Filetype text setlocal shiftround
 autocmd Filetype text setlocal smartindent
 autocmd Filetype text setlocal smarttab
 
-
+"zsh file specific settings
+au BufRead,BufNewFile dot_zshrc set filetype=zsh
