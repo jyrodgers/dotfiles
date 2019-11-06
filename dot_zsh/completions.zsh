@@ -20,6 +20,7 @@ function zsh-update-comp-defs() {
         https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/_node
         https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/_cmake
         https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/_bundle
+        https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/_caffeinate
         https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/_ghc
         https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/_perf
         https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker
