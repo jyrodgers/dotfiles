@@ -113,6 +113,7 @@ alias kgsca='kubectl get serviceaccount'
 alias kgsca='kubectl get storageclass --all-namespaces'
 alias kgsc='kubectl get storageclass'
 
+
 ## pods
 
 ## logs
@@ -142,6 +143,8 @@ alias treer='tree -r' # sort by reverse alphabet order
 alias treet='tree -t' # sort by last modification date
 alias treel='tree -L' # max depth
 alias treeo='tree -o' # output to file 
+
+alias wifi="networksetup -setairportpower en0" # usage: `wifi on` or `wifi off`. 
 
 # z.lua
 alias zz='z -c'      # restrict matches to subdirs of $PWD
