@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "## {date:short}\n\n### Summary:\n\n**Log:**\n\n**{time:short}**\n\n- What I am going to do:\n\n- What I just did:\n",
+    "uid" : "339481DE-FB8B-4DFB-820B-4C31D1E5F842",
+    "name" : "Work Journal Template",
+    "keyword" : ";wj"
+  }
+}

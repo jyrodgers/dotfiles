@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>scope</key>
+	<array>
+		<string>/Applications</string>
+		<string>~/Desktop</string>
+		<string>~/Documents</string>
+		<string>~/Downloads</string>
+		<string>~/Dropbox/vimwiki</string>
+		<string>~/Git</string>
+		<string>~/Library/Mobile Documents/com~apple~CloudDocs/Notes</string>
+		<string>~/Pictures/Screenshots</string>
+	</array>
+</dict>
+</plist>

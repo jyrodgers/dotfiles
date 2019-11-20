@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>25E9B365-D911-43D1-B467-7E6FBB54B64F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>github</string>
+			<key>text</key>
+			<string>Search github.com for '{query}'</string>
+			<key>url</key>
+			<string>https://github.com/search?q={query}&amp;amp;ref=opensearch</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>2AD8E399-9543-4018-8C8A-4855BE9B3E4C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>packal</string>
+			<key>text</key>
+			<string>Packal</string>
+			<key>url</key>
+			<string>http://www.packal.org/search/site/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>5241A9A4-2F3E-4AA6-AF3E-BDD7C4DC6E8C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>vwiki</string>
+			<key>text</key>
+			<string>Search wiki.viasat.com for '{query}'</string>
+			<key>url</key>
+			<string>https://wiki.viasat.com/dosearchsite.action?queryString={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>B87452A1-6E79-4C91-BD35-F275C60DE48E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cpp</string>
+			<key>spaces</key>
+			<string>+</string>
+			<key>text</key>
+			<string>cplusplus.com</string>
+			<key>url</key>
+			<string>http://www.cplusplus.com/search.do?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>BFC6DD9B-A1CA-4C2F-ADCA-90EF7AD81E48</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>stack</string>
+			<key>text</key>
+			<string>Search stackoverflow.com for '{query}'</string>
+			<key>url</key>
+			<string>http://stackoverflow.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

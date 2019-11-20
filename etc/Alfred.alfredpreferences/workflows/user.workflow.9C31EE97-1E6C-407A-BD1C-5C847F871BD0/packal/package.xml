@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Play Song</name>
+  <version>5.0.2</version>
+  <bundle>com.calebevans.playsong</bundle>
+  <updated>1555885976</updated>
+  <file>play_song_alfred_3.alfredworkflow</file>
+</workflow>

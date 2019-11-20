@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>scope</key>
+	<array>
+		<string>/Applications</string>
+		<string>~/Desktop</string>
+		<string>~/DEVONthink</string>
+		<string>~/Documents</string>
+		<string>~/Downloads</string>
+		<string>~/Dropbox/vimwiki</string>
+		<string>~/Temp</string>
+		<string>~/vimwiki</string>
+	</array>
+</dict>
+</plist>
