@@ -2,7 +2,7 @@
 autotag:
   whitelist: []
   synonyms: {}
-doing_file: "~/Git/viasatwiki/what_was_i_doing.taskpaper"
+doing_file: "~/Documents/what_was_i_doing.taskpaper"
 current_section: Currently
 editor_app: 
 templates:
