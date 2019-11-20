@@ -64,27 +64,27 @@ function! InitAbolish ()
    Abolish afterword{,s}                         afterward{}
    Abolish anomol{y,ies}                         anomal{}
    Abolish austrail{a,an,ia,ian}                 austral{ia,ian}
-   Abolish balacner                              balancer
+   Abolish balacner balancer
    Abolish cal{a,e}nder{,s}                      cal{e}ndar{}
    Abolish delimeter{,s}                         delimiter{}
    Abolish despara{te,tely,tion}                 despera{}
    Abolish destionation{,s}                      destination{}
    Abolish d{e,i}screp{e,a}nc{y,ies}             d{i}screp{a}nc{}
    Abolish euphamis{m,ms,tic,tically}            euphemis{}
-   Abolish fro                                   for
+   Abolish fro for
    Abolish functoin{ally,ed} function{}
-   Abolish hense                                 hence
-   Abolish hte                                   the
+   Abolish hense hence
+   Abolish hte the
    Abolish improvment{,s}                        improvement{}
    Abolish inherant{,ly}                         inherent{}
-   Abolish lastest                               latest
-   Abolish nad                                   and
-   Abolish ot                                    to
+   Abolish lastest latest
+   Abolish nad and
+   Abolish ot to
    Abolish persistan{ce,t,tly}                   persisten{}
    Abolish recipie{s}                            recipe
    Abolish rec{co,com,o}mend{,s,ed,ing,ation}    rec{om}mend{}
    Abolish referesh{,es}                         refresh{}
-   Abolish reproducable                          reproducible
+   Abolish reproducable reproducible
    Abolish resouce{,s}                           resource{}
    Abolish restraunt{,s}                         restaurant{}
    Abolish segument{,s,ed,ation}                 segment{}
