@@ -179,7 +179,7 @@ nnoremap <Leader>sp :set paste<CR>|                   " set paste mode
 ""=====================================
 
 "nmap <Leader>t :Tags<CR>| " open tag fuzzy finder (fzf)
-nmap <Leader>t :split<CR>:terminal<CR>i| " open terminal in horizontal split
+" nmap <Leader>t :split<CR>:terminal<CR>i| " open terminal in horizontal split
 
 "" u
 ""=====================================
@@ -221,14 +221,14 @@ nnoremap <leader>* :noh<CR> | " un-highlights all words
 nnoremap ' `| " Better mark jumping (line + col)
 noremap `` ~i<esc>|      " Use `` to change the case of a character
 
-inoremap '' "|     " Use '' as " to avoid using shift
-inoremap ,, <|     " Use ,, as < to avoid using shift
-inoremap .. >|     " Use .. as > to avoid using shift
-inoremap ;; :|     " Use ;; as : to avoid using shift
-inoremap [[ {|     " Use [[ as { to avoid using shift
-inoremap \\ \||    " Use \\ as | to avoid using shift
-inoremap ]] }|     " Use ]] as } to avoid using shift
-inoremap `` ~|     " Use `` as ~ to avoid using shift
+" inoremap '' "|     " Use '' as " to avoid using shift
+" inoremap ,, <|     " Use ,, as < to avoid using shift
+" inoremap .. >|     " Use .. as > to avoid using shift
+" inoremap ;; :|     " Use ;; as : to avoid using shift
+" inoremap [[ {|     " Use [[ as { to avoid using shift
+" inoremap \\ \||    " Use \\ as | to avoid using shift
+" inoremap ]] }|     " Use ]] as } to avoid using shift
+" inoremap `` ~|     " Use `` as ~ to avoid using shift
 
 nnoremap <silent><leader><c-]> <c-w><c-]>| " Open tag in a new split
 
