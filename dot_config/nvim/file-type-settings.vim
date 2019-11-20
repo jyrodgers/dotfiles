@@ -16,7 +16,6 @@ filetype indent on " Enable file-type-specific indenting
 " setlocal smarttab
 " setlocal expandtab
 " setlocal commentstring=//\ %s
-setlocal matchpairs+=<:>| " can % between matching braces
 
 "" Git specific settings
 autocmd Filetype gitcommit setlocal spell textwidth=72

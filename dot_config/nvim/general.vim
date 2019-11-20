@@ -81,6 +81,7 @@ set updatetime=100                     "  If this many milliseconds nothing is t
 set visualbell                         "  Use visual bell instead of noise
 set whichwrap=b,s,h,l,<,>,[,]          "  Backspace and cursor keys wrap too
 set wildmenu
+set matchpairs=(:),{:},[:],<:>,":",':',`:`
 
 syntax enable                          " Enable syntax highlighting
 
