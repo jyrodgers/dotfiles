@@ -1,7 +1,15 @@
-# github.com/jyrodgers/dotfiles
+# John Rodgers's dotfiles
 
-John Rodgers dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
+Managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
-Install them with:
+To install this configuration:
+
+**Warning: Following these steps will overwrite existing files**
+
+1. Install chezmoi:
+
+    curl -sfL https://git.io/chezmoi | sh
+
+- Sync configurations:
 
     chezmoi init https://github.com/jyrodgers/dotfiles.git
