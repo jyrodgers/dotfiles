@@ -5,7 +5,17 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-plugins=( copydir copyfile docker git gitfast helm terraform vi-mode )
+plugins=( 
+  copydir
+  copyfile
+  docker
+  dnote
+  git
+  gitfast
+  helm
+  terraform
+  vi-mode
+)
 # export ZSH=/Users/jyrodgers/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
