@@ -80,39 +80,7 @@ alias hi="helm install"
 alias hl="helm list"
 alias hld="helm list --deployed"
 
-# kubectl
-
-alias k='kubectl'
-alias kc='kubectl create -f'
-alias kdl='kubectl delete'
-alias kdld='kubectl delete deployment'
-alias kdlp='kubectl delete pod'
-alias kdlpa='kubectl delete pod --all-namespaces'
-alias kdlpv='kubectl delete pv'
-alias kdlpvc='kubectl delete pvc'
-alias kdlsa='kubectl delete serviceaccount'
-alias kdlsc='kubectl delete storageclass'
-alias kds='kubectl describe'
-alias kdsd='kubectl describe deployment'
-alias kdsp='kubectl describe pod'
-alias kdspv='kubectl describe pv'
-alias kdspvc='kubectl describe pvc'
-alias kdssc='kubectl describe storageclass'
-alias ke='f() { kubectl exec -it $1 /bin/bash };f'
-alias kg='kubectl get'
-alias kgd='kubectl get deployment'
-alias kgda='kubectl get deployment --all-namespaces'
-alias kgp='kubectl get pod'
-alias kgpa='kubectl get pod --all-namespaces'
-alias kgpva='kubectl get pv --all-namespaces'
-alias kgpv='kubectl get pv'
-alias kgpvca='kubectl get pvc --all-namespaces'
-alias kgpvc='kubectl get pvc'
-alias kgsc='kubectl get serviceaccount --all-namespaces'
-alias kgsca='kubectl get serviceaccount'
-alias kgsca='kubectl get storageclass --all-namespaces'
-alias kgsc='kubectl get storageclass'
-
+source ~/.zsh/aliases/kubectl_aliases
 
 ## pods
 
@@ -151,4 +119,3 @@ alias zz='z -c'      # restrict matches to subdirs of $PWD
 alias zi='z -i'      # cd with interactive selection
 alias zf='z -I'      # use fzf to select in multiple matches
 alias zb='z -b'      # quickly cd to the parent directoryexport BROWSER=w3m
-
