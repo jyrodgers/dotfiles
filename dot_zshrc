@@ -2,7 +2,9 @@
 export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 
+
 export PATH=/usr/local/bin:$PATH
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 export PIP_REQUIRE_VENV=true
 function source-file(){
@@ -148,7 +150,7 @@ setopt share_history          # share command history data
 # fzf zsh config file
 
 # for f in  ~/.zsh/*(DN); do source $f; done
-source ~/.zsh/alias.zsh
+source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/plugins.zsh
 source ~/.zsh/variables.zsh
