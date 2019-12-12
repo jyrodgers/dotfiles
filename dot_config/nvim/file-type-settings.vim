@@ -58,15 +58,26 @@ autocmd Filetype cpp setlocal textwidth=0
 autocmd Filetype cpp setlocal wrap
 autocmd Filetype cpp setlocal wrapmargin=0
 
+"" HELM specific settings
+autocmd FileType helm setlocal commentstring=#\ %s
+autocmd FileType helm setlocal commentstring=\"%s
+autocmd Filetype helm setlocal expandtab
+autocmd Filetype helm setlocal shiftwidth=2
+autocmd Filetype helm setlocal smarttab
+autocmd Filetype helm setlocal ts=2
+autocmd Filetype helm setlocal tw=0
+
 "" JSON specific settings
 autocmd FileType json setlocal commentstring=#\ %s
 
 "" YAML specific settings
 autocmd FileType yaml setlocal commentstring=#\ %s
-autocmd Filetype yaml setlocal tw=0
-autocmd Filetype yaml setlocal ts=2
-autocmd Filetype yaml setlocal shiftwidth=2
 autocmd FileType yaml setlocal commentstring=\"%s
+autocmd Filetype yaml setlocal expandtab
+autocmd Filetype yaml setlocal shiftwidth=2
+autocmd Filetype yaml setlocal smarttab
+autocmd Filetype yaml setlocal ts=2
+autocmd Filetype yaml setlocal tw=0
 
 "" markdown specific settings
 autocmd Filetype markdown setlocal tw=0
