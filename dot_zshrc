@@ -5,6 +5,8 @@ export EDITOR=nvim
 
 export PATH=/usr/local/bin:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export GOPATH=$HOME/go
+export KUBECONFIG=$HOME/.kube/config
 
 export PIP_REQUIRE_VENV=true
 function source-file(){
