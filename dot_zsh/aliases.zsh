@@ -72,12 +72,18 @@ alias db="docker build"
 alias dbnc="docker build --no-cache"
 alias dr="docker run"
 
+# Chez moi
+alias cm="chezmoi"
+alias cmadd="chezmoi add"
+alias cmapply="chezmoi -v apply"
+
 # Helm
 
-alias hdl="helm delete"
+alias hrm="helm delete"
+alias hrmp="helm del --purge"
 alias hf="helm fetch"
-alias hi="helm install"
-alias hl="helm list"
+alias hin="helm install"
+alias hls="helm list"
 alias hld="helm list --deployed"
 
 source ~/.zsh/aliases/kubectl_aliases
