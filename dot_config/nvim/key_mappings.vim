@@ -280,3 +280,5 @@ inoremap <up> <nop>
 :nmap <ScrollWheelUp> <nop>
 
 
+" Disable Ctrl-Space while I overcome muscle memory
+inoremap <C-Space> <nop>
