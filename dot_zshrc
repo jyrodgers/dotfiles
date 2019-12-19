@@ -158,6 +158,4 @@ source ~/.zsh/plugins.zsh
 source ~/.zsh/variables.zsh
 source ~/.zsh/completions.zsh
 
-# Prevent a dog from crying at start up!
-
-true
+source ~/notifyre.sh
