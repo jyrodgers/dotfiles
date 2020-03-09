@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "858-231-4371",
+    "dontautoexpand" : true,
     "uid" : "CC0035AB-2C7A-41AA-BB69-94AF1A2CC479",
     "name" : "Mobile Number",
     "keyword" : ";mobile"

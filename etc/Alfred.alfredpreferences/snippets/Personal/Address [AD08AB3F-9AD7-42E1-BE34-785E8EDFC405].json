@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "18990 Caminito Cantilena",
+    "dontautoexpand" : true,
     "uid" : "AD08AB3F-9AD7-42E1-BE34-785E8EDFC405",
     "name" : "Address",
     "keyword" : ";address"

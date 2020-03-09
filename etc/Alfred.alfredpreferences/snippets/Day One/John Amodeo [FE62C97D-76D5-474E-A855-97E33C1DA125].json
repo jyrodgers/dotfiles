@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "[John Amodeo](dayone2:\/\/view?entryId=E7FBD1603F61428CB8105611D76A6C42)",
+    "dontautoexpand" : true,
     "uid" : "FE62C97D-76D5-474E-A855-97E33C1DA125",
     "name" : "John Amodeo",
     "keyword" : ";john"

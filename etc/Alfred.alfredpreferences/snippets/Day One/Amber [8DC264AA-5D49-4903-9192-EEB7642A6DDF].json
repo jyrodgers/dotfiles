@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "[Amber](dayone2:\/\/view?entryId=5F1A7CF3B546446D9CA4711ACA1555B0)",
+    "dontautoexpand" : true,
     "uid" : "8DC264AA-5D49-4903-9192-EEB7642A6DDF",
     "name" : "Amber",
     "keyword" : ";amber"

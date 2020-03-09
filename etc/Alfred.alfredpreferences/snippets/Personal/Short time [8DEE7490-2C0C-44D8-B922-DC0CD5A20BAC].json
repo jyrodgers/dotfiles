@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "{time:short}",
+    "dontautoexpand" : true,
     "uid" : "8DEE7490-2C0C-44D8-B922-DC0CD5A20BAC",
     "name" : "Short time",
     "keyword" : ";stime"

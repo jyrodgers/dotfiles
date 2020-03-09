@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "{date: EEEE}",
+    "dontautoexpand" : true,
     "uid" : "76D54904-013C-4BEE-B098-0CCE06CC394D",
     "name" : "Current Day",
     "keyword" : ";day"

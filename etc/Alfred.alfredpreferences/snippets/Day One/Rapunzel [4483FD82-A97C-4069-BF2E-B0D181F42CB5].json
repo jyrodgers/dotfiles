@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "[Rapunzel](dayone2:\/\/view?entryId=CCC842F6440842CA91516803B532C0D6)",
+    "dontautoexpand" : true,
     "uid" : "4483FD82-A97C-4069-BF2E-B0D181F42CB5",
     "name" : "Rapunzel",
     "keyword" : ";rapunzel"

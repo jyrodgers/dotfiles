@@ -1,6 +1,6 @@
 export P4CONFIG=.p4config
 # For building SMAC image
-export P4PATH=/home/jyrodgers/Perforce/jyrodgers_vcamacdev01_5739
+export P4PATH=/Users/jyrodgers/Perforce/jyrodgers_LP-JYRODGER-OSX_5205
 export CONFD=$P4PATH/LeapFrog/Technical/Software/cots/Tail-f/confd-6.4.2/x86_64
 export AB_COMMON_SRC=$P4PATH/Afterburner/Technical/Software/code/common
 export COMMON_SRC=$P4PATH/LeapFrog/Technical/Software/code/common

@@ -75,7 +75,7 @@ set showcmd                            "  Shows the incomplete commands that you
 set showmatch                          "  show opposite parenthesis, bracket etc
 set smartcase                          "  If a capital letter is included in search, make it case-sensitive
 set spell spelllang=en_us
-set timeoutlen=350                     " Set time between key presses before implementing commands
+set timeoutlen=450                     " Set time between key presses before implementing commands
 set undolevels=2000                    "  Set amount of undo history
 set updatetime=100                     "  If this many milliseconds nothing is typed the swap file will be written to disk Affects how quickly gutter symbols appear for git-gutter
 set visualbell                         "  Use visual bell instead of noise

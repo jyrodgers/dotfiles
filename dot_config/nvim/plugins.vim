@@ -34,6 +34,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'towolf/vim-helm'
 Plug 'rhysd/committia.vim'
+Plug 'pboettch/vim-cmake-syntax'
 
 
 " Dockerfile.vim
@@ -179,6 +180,9 @@ Plug 'nightsense/snow'
 
 " Solarized: Color scheme for vim https://github.com/altercation/vim-colors-solarized
 Plug 'altercation/vim-colors-solarized'
+
+" SpaceCamp: Vim colors for the final frontier https://github.com/jaredgorski/SpaceCamp
+Plug 'jaredgorski/SpaceCamp'
 
 "======================================
 " Commentary:

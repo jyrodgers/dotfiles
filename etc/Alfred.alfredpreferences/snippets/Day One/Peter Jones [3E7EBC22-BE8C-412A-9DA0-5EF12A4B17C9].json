@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "[Peter Jones](dayone2:\/\/view?entryId=5F571C5B098F45E2A2405243F2A9E812)",
+    "dontautoexpand" : true,
     "uid" : "3E7EBC22-BE8C-412A-9DA0-5EF12A4B17C9",
     "name" : "Peter Jones",
     "keyword" : ";peter"

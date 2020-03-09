@@ -21,5 +21,7 @@
 	<integer>1</integer>
 	<key>persistForImages</key>
 	<integer>1</integer>
+	<key>snippetKeywordEnabled</key>
+	<false/>
 </dict>
 </plist>

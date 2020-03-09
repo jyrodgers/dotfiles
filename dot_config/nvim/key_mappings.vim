@@ -4,7 +4,7 @@
 
 " The leader is the key to initiate custom shortcuts
 " http://learnvimscriptthehardway.stevelosh.com/chapters/06.html
-let mapleader = "\<space>"
+let mapleader = ";"
 
 "" a
 ""=====================================

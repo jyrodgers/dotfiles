@@ -157,5 +157,3 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/plugins.zsh
 source ~/.zsh/variables.zsh
 source ~/.zsh/completions.zsh
-
-source ~/notifyre.sh
