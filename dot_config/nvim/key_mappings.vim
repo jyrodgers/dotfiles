@@ -113,8 +113,10 @@ nnoremap <leader>j i<CR><Esc>|  " split line
 
 
 " inoremap <Leader><C-l> *
-nnoremap <silent> <leader>l >>|                             " indent line
-xnoremap <silent> <leader>l >gv|                            " indent line
+" nnoremap <silent> <leader>l >>|                             " indent line
+" xnoremap <silent> <leader>l >gv|                            " indent line
+                                                            " add markdown link to visual selection
+vnoremap <Leader>l c[ <C-r>" ](<C-R>=strftime("%Y%m%d%M")<cr>-<Esc>"*pli)<Esc>vi(uvi(:s/\%V\ /-/g<cr>gv<Esc>a.md<Esc>b
 autocmd Filetype markdown noremap <leader>lb i---<CR><Esc>| " add line break
 
 "" m

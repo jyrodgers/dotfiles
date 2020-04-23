@@ -5,6 +5,7 @@
 # Terminal
 alias  ..='cd ..'
 alias ...='cd ../..'
+alias ag="tag -f"
 alias cls="clear && ls"
 alias cp='cp -iv'
 alias cwd='pwd | tr -d "\n" | pbcopy && pwd'
