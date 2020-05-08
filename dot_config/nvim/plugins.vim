@@ -17,30 +17,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Experimental Plugins
 """""""""""""""""""""""
 
-" " Enables neovim support for Language Server Protocol.
-" Requires neovim.
-    Plug 'autozimu/LanguageClient-neovim', {
-        \ 'branch': 'next',
-        \ 'do': 'bash install.sh',
-    \ }
-Plug 'junegunn/goyo.vim'
-Plug 'christoomey/vim-titlecase'
 Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
+
 Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'hashivim/vim-terraform'
-Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'pearofducks/ansible-vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'towolf/vim-helm'
+Plug 'sheerun/vim-polyglot'
 Plug 'rhysd/committia.vim'
-Plug 'pboettch/vim-cmake-syntax'
 
 
-" Dockerfile.vim
-" https://github.com/ekalinin/Dockerfile.vim
-" Vim syntax file for Docker's Dockerfile
-Plug 'ekalinin/Dockerfile.vim'
 
 "======================================
 " Abolish:
@@ -60,52 +43,54 @@ Plug 'tpope/vim-abolish'
 " Abolish teh the
 " Abolish anomol{y,ies} anomal{}
 
-function! InitAbolish ()
-   Abolish adn and
-   Abolish afterword{,s}                         afterward{}
-   Abolish anomol{y,ies}                         anomal{}
-   Abolish austrail{a,an,ia,ian}                 austral{ia,ian}
-   Abolish balacner balancer
-   Abolish cal{a,e}nder{,s}                      cal{e}ndar{}
-   Abolish delimeter{,s}                         delimiter{}
-   Abolish despara{te,tely,tion}                 despera{}
-   Abolish destionation{,s}                      destination{}
-   Abolish d{e,i}screp{e,a}nc{y,ies}             d{i}screp{a}nc{}
-   Abolish euphamis{m,ms,tic,tically}            euphemis{}
-   Abolish fro for
-   Abolish functoin{ally,ed} function{}
-   Abolish hense hence
-   Abolish hte the
-   Abolish improvment{,s}                        improvement{}
-   Abolish inherant{,ly}                         inherent{}
-   Abolish lastest latest
-   Abolish nad and
-   Abolish ot to
-   Abolish persistan{ce,t,tly}                   persisten{}
-   Abolish recipie{s}                            recipe
-   Abolish rec{co,com,o}mend{,s,ed,ing,ation}    rec{om}mend{}
-   Abolish referesh{,es}                         refresh{}
-   Abolish reproducable reproducible
-   Abolish resouce{,s}                           resource{}
-   Abolish restraunt{,s}                         restaurant{}
-   Abolish segument{,s,ed,ation}                 segment{}
-   Abolish seperat{e,es,ed,ing,ely,ion,ions,or}  separat{}
-   Abolish srting{s}                             string{}
-   Abolish tempalte{s}                           template{}
-   Abolish {,in}consistan{cy,cies,t,tly}         {}consisten{}
-   Abolish {,ir}releven{ce,cy,t,tly}             {}relevan{}
-   Abolish {,non}existan{ce,t}                   {}existen{}
-   Abolish {,re}impliment{,s,ing,ed,ation}       {}implement{}
-   Abolish {,un}nec{ce,ces,e}sar{y,ily}          {}nec{es}sar{}
-   Abolish {,un}orgin{,al}                       {}origin{}
-   Abolish {c,m}arraige{,s}                      {}arriage{}
-   Abolish {les,compar,compari}sion{,s}          {les,compari,compari}son{}
-   Abolish wrok{er,ing}                          work{} 
-   Abolish work{re,ign}                          work{} 
-endfunction
+"function! InitAbolish ()
+"   Abolish adn and
+"   Abolish afterword{,s}                         afterward{}
+"   Abolish anomol{y,ies}                         anomal{}
+"   Abolish austrail{a,an,ia,ian}                 austral{ia,ian}
+"   Abolish balacner balancer
+"   Abolish cal{a,e}nder{,s}                      cal{e}ndar{}
+"   Abolish delimeter{,s}                         delimiter{}
+"   Abolish despara{te,tely,tion}                 despera{}
+"   Abolish destionation{,s}                      destination{}
+"   Abolish d{e,i}screp{e,a}nc{y,ies}             d{i}screp{a}nc{}
+"   Abolish euphamis{m,ms,tic,tically}            euphemis{}
+"   Abolish fro for
+"   Abolish functoin{ally,ed} function{}
+"   Abolish hense hence
+"   Abolish hte the
+"   Abolish improvment{,s}                        improvement{}
+"   Abolish inherant{,ly}                         inherent{}
+"   Abolish lastest latest
+"   Abolish nad and
+"   Abolish ot to
+"   Abolish persistan{ce,t,tly}                   persisten{}
+"   Abolish recipie{s}                            recipe
+"   Abolish rec{co,com,o}mend{,s,ed,ing,ation}    rec{om}mend{}
+"   Abolish referesh{,es}                         refresh{}
+"   Abolish reproducable reproducible
+"   Abolish resouce{,s}                           resource{}
+"   Abolish restraunt{,s}                         restaurant{}
+"   Abolish segument{,s,ed,ation}                 segment{}
+"   Abolish seperat{e,es,ed,ing,ely,ion,ions,or}  separat{}
+"   Abolish srting{s}                             string{}
+"   Abolish tempalte{s}                           template{}
+"   Abolish {,in}consistan{cy,cies,t,tly}         {}consisten{}
+"   Abolish {,ir}releven{ce,cy,t,tly}             {}relevan{}
+"   Abolish {,non}existan{ce,t}                   {}existen{}
+"   Abolish {,re}impliment{,s,ing,ed,ation}       {}implement{}
+"   Abolish {,un}nec{ce,ces,e}sar{y,ily}          {}nec{es}sar{}
+"   Abolish {,un}orgin{,al}                       {}origin{}
+"   Abolish {c,m}arraige{,s}                      {}arriage{}
+"   Abolish {les,compar,compari}sion{,s}          {les,compari,compari}son{}
+"   Abolish wrok{er,ing}                          work{} 
+"   Abolish work{re,ign}                          work{} 
+"endfunction
 
 
 " Coercion:
+"======================================
+" Included in Abolish
 " snake_case (crs):       fooBar -> foo_bar
 " MixedCase (crm):        foo_bar -> FooBar
 " camelCase (crc):        foo_bar -> fooBar
@@ -115,24 +100,19 @@ endfunction
 " space case (cr<space>): fooBar -> foo bar
 " Title Case (crt):       fooBar -> Foo Bar
 
-"======================================
-" Ack:
-" https://github.com/mileszs/ack.vim
-" allows you to search with ack from within Vim and shows the results in a split window.
-"======================================
-" Plug 'mileszs/ack.vim' "
 
-" " use ag instead of Ack or grep
-" if executable('ag')
-"   let g:ackprg = 'ag --vimgrep'
-" endif
+"======================================
+" Ansible Syntax:
+" https://github.com/pearofducks/ansible-vim
+" Ansible file syntax
+"======================================
+" Plug 'pearofducks/ansible-vim'
 
 "======================================
 " ALE:
 " https://github.com/w0rp/ale
-" ALE (Asynchronous Lint Engine) is a plugin for providing linting
+"  Checks the contents of text buffers and return linting errors as text is changed in Vim
 "======================================
-
 Plug 'w0rp/ale'
 
 """ ALE Settings
@@ -141,6 +121,13 @@ let g:ale_sign_error = '✗'
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 let g:ale_completion_enabled = 1| " Enable completion where available.
+
+"======================================
+" Autopairs:
+" https://github.com/jiangmiao/auto-pairs
+" Automatically add closing pair
+"======================================
+Plug 'jiangmiao/auto-pairs'
 
 "======================================
 " CamelCaseMotion:
@@ -157,25 +144,50 @@ sunmap b
 sunmap e
 
 "======================================
+" CMake Syntax:
+" https://github.com/pboettch/vim-cmake-syntax
+" CMake file syntax
+"======================================
+" Plug 'pboettch/vim-cmake-syntax'
+
+"======================================
 " Colorschemes:
 "======================================
 
-" Dracula: https://github.com/dracula/dracula-theme
+"" Dracula: https://github.com/dracula/dracula-theme
 Plug 'dracula/vim', { 'as': 'dracula' }
-
-" Nord: An arctic, north-bluish clean and elegant Vim color theme.
-Plug 'arcticicestudio/nord-vim'
 
 " Gruvbox: Retro groove color scheme for Vim https://github.com/morhetz/gruvbox
 Plug 'morhetz/gruvbox'
 
-" lite-brite: a heavily customized dark color scheme for Vim designed to provide a consistent experience for a variety of file types. https://github.com/noprompt/lite-brite
+" Gruvbox Material: a modified version of Gruvbox, the contrast is adjusted to be softer in order to protect developers' eyes.
+Plug 'sainnhe/gruvbox-material'
+" important!!
+" set termguicolors
+
+" for dark version
+" set background=dark
+
+" for light version
+" set background=light
+
+" set contrast
+" this configuration option should be placed before `colorscheme gruvbox-material`
+" available values: 'hard', 'medium'(default), 'soft'
+" let g:gruvbox_material_background = 'soft'
+
+" colorscheme gruvbox-material
+
+"" lite-brite: a heavily customized dark color scheme for Vim designed to provide a consistent experience for a variety of file types. https://github.com/noprompt/lite-brite
 Plug 'noprompt/lite-brite'
 
 " Onedark: dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme https://github.com/joshdick/onedark.vim
 Plug 'joshdick/onedark.vim'
 
-" Snow, a blue-tinted winter vimscape https://github.com/nightsense/snow
+"" Nord: An arctic, north-bluish clean and elegant Vim color theme.
+Plug 'arcticicestudio/nord-vim'
+
+" Snow: a blue-tinted winter vimscape https://github.com/nightsense/snow
 Plug 'nightsense/snow'
 
 " Solarized: Color scheme for vim https://github.com/altercation/vim-colors-solarized
@@ -207,9 +219,8 @@ Plug 'tpope/vim-commentary'
 let g:deoplete#enable_at_startup = 1
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['neosnippet', 'tag', 'buffer', 'member', 'tabnine', 'LanguageClient']
+let g:deoplete#custom#enable_smart_case = 1
+let g:deoplete#custom#source = ['neosnippet', 'tag', 'buffer', 'member', 'tabnine', 'LanguageClient']
 
 "======================================
 " Dockerfile:
@@ -217,7 +228,7 @@ let g:deoplete#sources._ = ['neosnippet', 'tag', 'buffer', 'member', 'tabnine', 
 " Vim syntax file for Docker's Dockerfile
 "======================================
 
-Plug 'ekalinin/Dockerfile.vim'
+" Plug 'ekalinin/Dockerfile.vim'
 
 "======================================
 " EasyAlign:
@@ -249,6 +260,7 @@ let g:EasyMotion_space_jump_first = 1 | " jump to first match ('a') by pressing 
 " 1. <leader>e to bring up Easy Motion menu.
 " 2. type the character that you want to jump to.
 " 3. type the highlighted character that is in the location that you want to jump to
+
 
 "======================================
 " Fzf:
@@ -304,6 +316,24 @@ Plug 'junegunn/goyo.vim'
 " let g:goyo_linenr (default: 0)
 
 "======================================
+" Helm Syntax:
+" https://github.com/towolf/vim-helm
+" Syntax for Helm files
+"======================================
+
+" Plug 'towolf/vim-helm'
+
+"======================================
+" Incsearch:
+" https://github.com/haya14busa/incsearch.vim
+" Improved incremental searching
+"======================================
+
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+" Configured with key mappings and function 'config_easyfuzzymotion'
+
+"======================================
 " IndentLine:
 " https://github.com/Yggdroot/indentLine
 " displaying thin vertical lines at each indentation level for code indented with spaces.
@@ -314,6 +344,20 @@ Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 " enable at startup
 let g:indentLine_enabled = 1
 autocmd! User indentLine doautocmd indentLine Syntax
+
+"======================================
+" Language Server:
+" https://github.com/autozimu/LanguageClient-neovim
+" The Language Server Protocol (LSP) defines the protocol used between an editor or IDE and a language server that provides language features like auto complete, go to definition, find all references etc. 
+"======================================
+
+" Enables neovim support for Language Server Protocol.
+" Requires neovim.
+    Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh',
+    \ }
+
 
 "======================================
 " Lightline
@@ -346,25 +390,34 @@ let g:lightline = {
 \ }
 
 "======================================
+" Jenkins-Syntax:
+" https://github.com/martinda/Jenkinsfile-vim-syntax
+" Jenkins file syntax
+"======================================
+
+" Plug 'martinda/Jenkinsfile-vim-syntax'
+
+"======================================
 " Neosnippet:
 " https://github.com/Shougo/neosnippet.vim
 " support for snippets. Snippets are small templates for commonly used code that you can fill in on the fly.
 "======================================
-Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet.vim'
 
-" key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+" " key-mappings.
+" " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-" Disable default snippets
-let g:neosnippet#disable_runtime_snippets = {
-		\   '_' : 1,
-		\ }
+" " Disable default snippets
+" let g:neosnippet#disable_runtime_snippets = {
+" 		\   '_' : 1,
+" 		\ }
 
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/Git/neosnippets/neosnippets'
+" " Tell Neosnippet about the other snippets
+" let g:neosnippet#snippets_directory='~/Git/neosnippets/neosnippets'
+" let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 "======================================
 " Nerdtree:
@@ -419,6 +472,7 @@ let g:NERDTreeIndicatorMapCustom = {
 "Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Parentheses
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
+let g:RainbowParenthesesToggleOn = 1
 
 
 "======================================
@@ -509,6 +563,18 @@ let g:task_paper_date_format = "%Y-%m-%d %H:%M"
 "     \tm     Move task to specified project
 
 "======================================
+" Terraform:
+" https://github.com/hashivim/vim-terraform
+" Syntax for terraform files
+"======================================
+
+" Plug 'hashivim/vim-terraform'
+
+" The main interface to the plugin is via the <Plug>Titlecase operator, by default mapped to gt.
+" The gt mapping will wait for a text object or motion before completing the titlecase operation. This means gti' will titlecase inside of single quotes, gtap will titlecase a paragraph, etc. gt will also work on a visual selection.
+" In addition, gT will titlecase the current line.
+
+"======================================
 " Tmux Navigator:
 " https://github.com/christoomey/vim-tmux-navigator
 " allows you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys.
@@ -540,6 +606,26 @@ Plug 'christoomey/vim-tmux-navigator'
 " bind-key -T copy-mode-vi C-k select-pane -U
 " bind-key -T copy-mode-vi C-l select-pane -R
 " bind-key -T copy-mode-vi C-\ select-pane -l
+
+"======================================
+" UltiSnips:
+" https://github.com/SirVer/ultisnips
+" Snippet Manager
+"======================================
+"" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'.config/nvim/snippets']
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 "======================================
 " Yank Ring:
