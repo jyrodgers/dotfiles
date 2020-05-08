@@ -355,7 +355,7 @@ autocmd! User indentLine doautocmd indentLine Syntax
 " Requires neovim.
     Plug 'autozimu/LanguageClient-neovim', {
         \ 'branch': 'next',
-        \ 'do': 'bash install.sh',
+        \ 'do': 'zsh install.sh',
     \ }
 
 
@@ -365,29 +365,29 @@ autocmd! User indentLine doautocmd indentLine Syntax
 " A light and configurable statusline/tabline plugin for Vim
 "======================================
 
-Plug 'itchyny/lightline.vim'
-
-" Configuration
-let g:lightline = {
-\ 'colorscheme': 'gruvbox',
-\ 'active': {
-\   'left': [['mode', 'paste'], ['filename', 'modified']],
-\   'right': [['lineinfo'], ['wordcount'],['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
-\ },
-\ 'component_expand': {
-\   'linter_warnings': 'LightlineLinterWarnings',
-\   'linter_errors': 'LightlineLinterErrors',
-\   'linter_ok': 'LightlineLinterOK'
-\ },
-\ 'component_function': {
-\   'wordcount': 'WordCount',
-\ },
-\ 'component_type': {
-\   'readonly': 'error',
-\   'linter_warnings': 'warning',
-\   'linter_errors': 'error'
-\ },
-\ }
+"Plug 'itchyny/lightline.vim'
+"
+"" Configuration
+"let g:lightline = {
+"\ 'colorscheme': 'gruvbox',
+"\ 'active': {
+"\   'left': [['mode', 'paste'], ['filename', 'modified']],
+"\   'right': [['lineinfo'], ['wordcount'],['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+"\ },
+"\ 'component_expand': {
+"\   'linter_warnings': 'LightlineLinterWarnings',
+"\   'linter_errors': 'LightlineLinterErrors',
+"\   'linter_ok': 'LightlineLinterOK'
+"\ },
+"\ 'component_function': {
+"\   'wordcount': 'WordCount',
+"\ },
+"\ 'component_type': {
+"\   'readonly': 'error',
+"\   'linter_warnings': 'warning',
+"\   'linter_errors': 'error'
+"\ },
+"\ }
 
 "======================================
 " Jenkins-Syntax:
