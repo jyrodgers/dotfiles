@@ -644,4 +644,4 @@ Plug 'vim-scripts/YankRing.vim'
 " let g:yankring_window_width = 100
 
 call plug#end()
-call PlugOnLoad('vim-abolish',         'call InitAbolish()')
+"call PlugOnLoad('vim-abolish',         'call InitAbolish()')
