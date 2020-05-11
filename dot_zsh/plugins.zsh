@@ -24,7 +24,7 @@ export FZF_DEFAULT_COMMAND='ag --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # z.lua
-eval "$(lua ~/Git/z_lua/z.lua --init enhanced fzf zsh)"
+eval "$(lua ~/repos/z_lua/z.lua --init enhanced fzf zsh)"
 export _ZL_ECHO=1
 
 if (( $+commands[tag] )); then
