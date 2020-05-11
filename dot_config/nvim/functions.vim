@@ -1,11 +1,9 @@
-command! ToggleDisablingOfNonCountedBasicMotions :call ToggleDisablingOfBasicMotionsIfNonCounted()
-command! DisableNonCountedBasicMotions :call SetDisablingOfBasicMotionsIfNonCounted(1)
-command! EnableNonCountedBasicMotions :call SetDisablingOfBasicMotionsIfNonCounted(0)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""" initialize plugins
+" initialize plugins on load
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! PlugOnLoad(name, exec) abort
 if has_key(g:plugs, a:name) &&
 \ (has_key(
@@ -17,36 +15,41 @@ execute 'autocmd VimEnter *' a:exec
 endif
 endfunction
 
-function! WordCount()
-    let currentmode = mode()
-    if !exists("g:lastmode_wc")
-        let g:lastmode_wc = currentmode
-    endif
-    " if we modify file, open a new buffer, be in visual ever, or switch modes
-    " since last run, we recompute.
-    if &modified || !exists("b:wordcount") || currentmode =~? '\c.*v' || currentmode != g:lastmode_wc
-        let g:lastmode_wc = currentmode
-        let l:old_position = getpos('.')
-        let l:old_status = v:statusmsg
-        execute "silent normal g\<c-g>"
-        if v:statusmsg == "--No lines in buffer--"
-            let b:wordcount = 0
-        else
-            let s:split_wc = split(v:statusmsg)
-            if index(s:split_wc, "Selected") < 0
-                let b:wordcount = str2nr(s:split_wc[11])
-            else
-                let b:wordcount = str2nr(s:split_wc[5])
-            endif
-            let v:statusmsg = l:old_status
-        endif
-        call setpos('.', l:old_position)
-        return b:wordcount
-    else
-        return b:wordcount
-    endif
-endfunction
+" Display word count in status bar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" function! WordCount()
+"     let currentmode = mode()
+"     if !exists("g:lastmode_wc")
+"         let g:lastmode_wc = currentmode
+"     endif
+"     " if we modify file, open a new buffer, be in visual ever, or switch modes
+"     " since last run, we recompute.
+"     if &modified || !exists("b:wordcount") || currentmode =~? '\c.*v' || currentmode != g:lastmode_wc
+"         let g:lastmode_wc = currentmode
+"         let l:old_position = getpos('.')
+"         let l:old_status = v:statusmsg
+"         execute "silent normal g\<c-g>"
+"         if v:statusmsg == "--No lines in buffer--"
+"             let b:wordcount = 0
+"         else
+"             let s:split_wc = split(v:statusmsg)
+"             if index(s:split_wc, "Selected") < 0
+"                 let b:wordcount = str2nr(s:split_wc[11])
+"             else
+"                 let b:wordcount = str2nr(s:split_wc[5])
+"             endif
+"             let v:statusmsg = l:old_status
+"         endif
+"         call setpos('.', l:old_position)
+"         return b:wordcount
+"     else
+"         return b:wordcount
+"     endif
+" endfunction
 
+" Fuzzy find search and jump to result
+" https://github.com/haya14busa/incsearch-easymotion.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:config_easyfuzzymotion(...) abort
   return extend(copy({
   \   'converters': [incsearch#config#fuzzyword#converter()],
@@ -58,7 +61,9 @@ function! s:config_easyfuzzymotion(...) abort
 endfunction
 
 
-" function to toggle list bullet
+" Toggles a bullet at beginning of line
+" Configure with key mapping
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ToggleBullet()
   let l:myVar = getline('.')
   if (l:myVar =~? '^\s*\s-\.*$')
@@ -68,7 +73,9 @@ function! ToggleBullet()
   endif
 endfunction
 
-" function to complete/uncomplete tasks in markdown
+" Toggle completion of check box in markdown
+" Configure with key mapping
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ToggleCheckmark()
   let l:myVar = getline('.')
   if (l:myVar =~? '^\s*-\s\[\s\].*$')
@@ -78,7 +85,9 @@ function! ToggleCheckmark()
   endif
 endfunction
 
-" :Change directory to the root of the Git repository
+" Changes current directory to the root of the Git repository
+" Use with :Root
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:root()
   let root = systemlist('git rev-parse --show-toplevel')[0]
   if v:shell_error
@@ -169,8 +178,9 @@ endif
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
-if has('persistent_undo') && isdirectory(expand('~').'/.vim/backup')
+if has('persistent_undo') && isdirectory(expand('~').'~/.config/nvim/backup')
     silent !mkdir ~/.vim/backup > /dev/null 2>&1
     set undodir=~/.vim/backup
 endif
@@ -183,41 +193,46 @@ if has('wildignore')
     set wildignore+=*~,*.swp,*.tmp
 endif
 
-if !exists("g:bracketed_paste_tmux_wrap")
-  let g:bracketed_paste_tmux_wrap = 1
-endif
+" if !exists("g:bracketed_paste_tmux_wrap")
+"   let g:bracketed_paste_tmux_wrap = 1
+" endif
 
-function! WrapForTmux(s)
-  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX')
-    return a:s
-  endif
+" function! WrapForTmux(s)
+"   if !g:bracketed_paste_tmux_wrap || !exists('$TMUX')
+"     return a:s
+"   endif
 
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
+"   let tmux_start = "\<Esc>Ptmux;"
+"   let tmux_end = "\<Esc>\\"
 
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
+"   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+" endfunction
 
-let &t_ti .= WrapForTmux("\<Esc>[?2004h")
-let &t_te .= WrapForTmux("\<Esc>[?2004l")
+" let &t_ti .= WrapForTmux("\<Esc>[?2004h")
+" let &t_te .= WrapForTmux("\<Esc>[?2004l")
 
-function! XTermPasteBegin(ret)
-  set pastetoggle=<f29>
-  set paste
-  return a:ret
-endfunction
+" function! XTermPasteBegin(ret)
+"   set pastetoggle=<f29>
+"   set paste
+"   return a:ret
+" endfunction
 
-execute "set <f28>=\<Esc>[200~"
-execute "set <f29>=\<Esc>[201~"
-map <expr> <f28> XTermPasteBegin("i")
-imap <expr> <f28> XTermPasteBegin("")
-vmap <expr> <f28> XTermPasteBegin("c")
-cmap <f28> <nop>
-cmap <f29> <nop>
+" execute "set <f28>=\<Esc>[200~"
+" execute "set <f29>=\<Esc>[201~"
+" map <expr> <f28> XTermPasteBegin("i")
+" imap <expr> <f28> XTermPasteBegin("")
+" vmap <expr> <f28> XTermPasteBegin("c")
+" cmap <f28> <nop>
+" cmap <f29> <nop>
 
 " Forces you to enter a count for each of the basic motions ("h", "j", "k", "l")
 " Alternate method can be found at:
 " http://jeetworks.org/from-acolyte-to-adept-the-next-step-after-nop-ing-arrow-keys/
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! ToggleDisablingOfNonCountedBasicMotions :call ToggleDisablingOfBasicMotionsIfNonCounted()
+command! DisableNonCountedBasicMotions :call SetDisablingOfBasicMotionsIfNonCounted(1)
+command! EnableNonCountedBasicMotions :call SetDisablingOfBasicMotionsIfNonCounted(0)
+
 function! DisableIfNonCounted(move) range
     if v:count
         return a:move
@@ -258,13 +273,13 @@ function! ToggleDisablingOfBasicMotionsIfNonCounted()
 endfunction
 :DisableNonCountedBasicMotions
 
+
 " Google word under cursor
 " ? to google, ! for feeling lucky
 function! s:goog(pat, lucky)
   let q = '"'.substitute(a:pat, '["\n]', ' ', 'g').'"'
   let q = substitute(q, '[[:punct:] ]',
-       \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
-  call system(printf('open "https://www.google.com/search?%sq=%s"',
-                   \ a:lucky ? 'btnI&' : '', q))
+        \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
+  call system(printf(g:open_command.' "https://www.google.com/search?%sq=%s"',
+        \ a:lucky ? 'btnI&' : '', q))
 endfunction
-

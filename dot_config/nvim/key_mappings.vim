@@ -9,10 +9,10 @@ let mapleader = ";"
 "" a
 ""=====================================
 
-" nnoremap <leader>a :A<CR>|  " uses a.vim to switch between source and header files or vice versa
-" nnoremap <leader>A :AV<CR>| " uses a.vim to switch between source and header files or vice versa in a vertical split
-nnoremap <leader>a :Ag<CR>|" uses ag to search through file contents, '?' to preview file
-nmap <leader>ai mzgg=G`z| " auto indent: will 'fix' identing for the entire file
+" uses ag to search through file contents, '?' to preview file
+nnoremap <leader>a :Ag<CR>
+" auto indent: will 'fix' identing for the entire file
+nmap <leader>ai mzgg=G`z
 
 " inoremap <Leader><C-a> (
 
@@ -24,7 +24,8 @@ autocmd Filetype markdown nnoremap <buffer> <silent> <leader>B :call ToggleBulle
 "" c
 ""=====================================
 
-nnoremap <leader>cwd :lcd %:p:h<CR>|  " Change working directory to the directory of the current file
+" Change working directory to the directory of the current file
+nnoremap <leader>cwd :lcd %:p:h<CR>
 
 " add/complete/uncomplete tasks in markdown files
 autocmd Filetype markdown nnoremap <buffer> <silent> <leader>c :keeppatterns s/^/-\ [\ ]\ /e<CR>
@@ -36,27 +37,37 @@ autocmd Filetype markdown nnoremap <buffer> <silent> <leader>C :call ToggleCheck
 "" e
 ""=====================================
 
-" nmap <Leader>e <Leader><Leader>s| " trigger easy motion
+" trigger easy motion
+" nmap <Leader>e <Leader><Leader>s
 
 " EasyMotion
-map  <Leader>; <Plug>(easymotion-bd-f)|       " Move to character with EasyMotion
-nmap <Leader>; <Plug>(easymotion-overwin-f)|  " Move to character with EasyMotion
-" map  <Leader>ew <Plug>(easymotion-bd-w)|" Move to word with EasyMotion
-" nmap <Leader>ew <Plug>(easymotion-overwin-w)|" Move to word with EasyMotion
-" map <Leader>el <Plug>(easymotion-bd-jk)|" Move to line with EasyMotion
-" nmap <Leader>el <Plug>(easymotion-overwin-line)|" Move to line with EasyMotion
+" Move to character with EasyMotion
+"nmap <Leader>; <Plug>(easymotion-bd-f)
+" Move to character with EasyMotion
+"nmap <Leader>; <Plug>(easymotion-overwin-f)
+" Move to word with EasyMotion
+" map  <Leader>ew <Plug>(easymotion-bd-w)
+" Move to word with EasyMotion
+" nmap <Leader>ew <Plug>(easymotion-overwin-w)
+" Move to line with EasyMotion
+" map <Leader>el <Plug>(easymotion-bd-jk)
+" Move to line with EasyMotion
+" nmap <Leader>el <Plug>(easymotion-overwin-line)
 
 
 "" f
 ""=====================================
 
-nmap <Leader>f :Files<CR>|  " open file search fuzzy finder (fzf)
+" open file search fuzzy finder (fzf)
+nmap <Leader>f :Files<CR>
 
 "" g
 ""=====================================
 
-map <leader>gf <leader>cwd :e <cfile><cr>|  " create the file whose file name under cursor and jump to it
-nnoremap <C-]> g<C-]>| " show all tag options by default
+" create the file whose file name under cursor and jump to it
+map <leader>gf <leader>cwd :e <cfile><cr>
+" show all tag options by default
+nnoremap <C-]> g<C-]>
 
 "" h
 ""=====================================
@@ -67,11 +78,16 @@ autocmd Filetype markdown xnoremap <buffer> <silent> <Leader>H :<c-u>keeppattern
 autocmd Filetype markdown nnoremap <buffer> <silent> <Leader>h :keeppatterns s/^#//e<cr>
 autocmd Filetype markdown xnoremap <buffer> <silent> <Leader>h :<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#//<cr>
 
-nmap <Leader>hc :History:<CR>|    " open recent command file fuzzy finder (fzf)
-nmap <Leader>hf :History<CR>|     " open recent file fuzzy finder (fzf)
-nmap <Leader>hs :History/<CR>|    " open recent search file fuzzy finder (fzf)
-nnoremap <silent> <leader>h <<|   " dedent line
-xnoremap <silent> <leader>h <gv|  " dedent line
+" open recent command file fuzzy finder (fzf)
+nmap <Leader>hc :History:<CR>
+" open recent file fuzzy finder (fzf)
+nmap <Leader>hf :History<CR>
+" open recent search file fuzzy finder (fzf)
+nmap <Leader>hs :History/<CR>
+" dedent line
+nnoremap <silent> <leader>h <<
+" dedent line
+xnoremap <silent> <leader>h <gv
 
 " inoremap <Leader><C-h> [
 " inoremap <Leader><C-H> {
@@ -90,14 +106,22 @@ autocmd Filetype markdown noremap <leader>h5 m`^i##### <esc>``6l
 "" j
 ""=====================================
 
-nnoremap J mjJ`j |              " Join lines and restore cursor location
-" cmap jk <ESC>|                  " 'jk' switches command to normal mode
-" inoremap jk <ESC>|              " 'jk' switches insert to normal mode
-" vnoremap jk <ESC>|              " 'jk' switches visual to normal mode
-" xnoremap jk <ESC>|              " 'jk' switches visual to normal mode
-nnoremap <leader>j i<CR><Esc>|  " split line
-" nnoremap <silent> <C-j> :move+<cr>| " move line down
-" xnoremap <silent> <C-j> :move'>+<cr>gv| " move line down
+" Join lines and restore cursor location
+nnoremap J mjJ`j 
+" 'jk' switches command to normal mode
+" cmap jk <ESC>
+" 'jk' switches insert to normal mode
+" inoremap jk <ESC>
+" 'jk' switches visual to normal mode
+" vnoremap jk <ESC>
+" 'jk' switches visual to normal mode
+" xnoremap jk <ESC>
+" split line
+nnoremap <leader>j i<CR><Esc>
+" move line down
+" nnoremap <silent> <C-j> :move+<cr>
+" move line down
+" xnoremap <silent> <C-j> :move'>+<cr>gv
 " inoremap <Leader><C-j> ]
 " inoremap <Leader><C-J> }
 
@@ -105,36 +129,50 @@ nnoremap <leader>j i<CR><Esc>|  " split line
 ""=====================================
 
 " inoremap <Leader><C-k> &
-" nnoremap <silent> <C-k> :move-2<cr>| " move line up
-" xnoremap <silent> <C-k> :move-2<cr>gv| " move line up
+" move line up
+" nnoremap <silent> <C-k> :move-2<cr>
+" move line up
+" xnoremap <silent> <C-k> :move-2<cr>gv
 
 "" l
 ""=====================================
 
 
 " inoremap <Leader><C-l> *
-" nnoremap <silent> <leader>l >>|                             " indent line
-" xnoremap <silent> <leader>l >gv|                            " indent line
+" indent line
+" nnoremap <silent> <leader>l >>
+" indent line
+" xnoremap <silent> <leader>l >gv
                                                             " add markdown link to visual selection
 vnoremap <Leader>l c[ <C-r>" ](<C-R>=strftime("%Y%m%d%M")<cr>-<Esc>"*pli)<Esc>vi(uvi(:s/\%V\ /-/g<cr>gv<Esc>a.md<Esc>b
-autocmd Filetype markdown noremap <leader>lb i---<CR><Esc>| " add line break
+" add line break
+autocmd Filetype markdown noremap <leader>lb i---<CR><Esc>
 
 "" m
 ""=====================================
 
 
-"nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>|" open the current file in Marked 2.
+" open the current file in Marked 2.
+"nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
 
 "" n
 ""=====================================
 
 
-nnoremap <Leader>n :NERDTreeToggle<Enter>|                  " Open NERDTree
-nnoremap <silent> <Leader>nf :NERDTreeFind<CR>|             " Open NERDTree to current file
-nnoremap <Leader>N :%s/<C-R>=expand('<cword>')<CR>//n<CR>|  " count all occurances in file of word under cursor
-nnoremap n nzzzv|                                           " next search result will be centered on the screen
-nnoremap N Nzzzv|                                           " next search result will be centered on the screen
+" Open NERDTree
+nnoremap <Leader>n :NERDTreeToggle<Enter>
+" Open NERDTree to current file
+nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
+" count all occurances in file of word under cursor
+nnoremap <Leader>N :%s/<C-R>=expand('<cword>')<CR>//n<CR>
+" next search result will be centered on the screen
+"nnoremap n nzzzv
+" next search result will be centered on the screen
+"nnoremap N Nzzzv
+" make n always search forward and N backward
+"nnoremap <expr> n 'Nn'[v:searchforward]
+"nnoremap <expr> N 'nN'[v:searchforward]
 
 "" o
 ""=====================================
@@ -144,44 +182,62 @@ nnoremap N Nzzzv|                                           " next search result
 ""=====================================
 
 
-noremap <leader>p "+gp|               " Paste from the system clipboard
-nnoremap <Leader>pi :PlugInstall<CR>| " install plugins
-nnoremap <Leader>pu :PlugUpdate<CR>|  " update plugins
-nnoremap <Leader>pc :PlugClean<CR>|   " delete old plugins
-nnoremap <Leader>pwd :!ls %:p<CR>|    " update plugins
+" Paste from the system clipboard
+noremap <leader>p "+gp
+" install plugins
+nnoremap <Leader>pi :PlugInstall<CR>
+" update plugins
+nnoremap <Leader>pu :PlugUpdate<CR>
+" delete old plugins
+nnoremap <Leader>pc :PlugClean<CR>
+" update plugins
+nnoremap <Leader>pwd :!ls %:p<CR>
 
 "" q
 ""=====================================
 
-nnoremap <Leader>q :q<cr>|    " quit
-nnoremap <Leader>Q :qa!<cr>|  " quit without saving
-nnoremap Q @q|                " replay q macro
+" quit
+nnoremap <Leader>q :q<cr>
+" quit without saving
+nnoremap <Leader>Q :qa!<cr>
+" replay q macro
+nnoremap Q @q
 
 "" r
 ""=====================================
 
-map <Leader>rlv :so $MYVIMRC<CR>|                     " reload vimrc file
-nnoremap <Leader>r :s/<C-R>=expand('<cword>')<CR>/|   " replace all occurances on line of word under cursor
-nnoremap <Leader>R :%s/<C-R>=expand('<cword>')<CR>/|  " replace all occurances in file of word under cursor
+" reload vimrc file
+map <Leader>rlv :so $MYVIMRC<CR>
+" replace all occurances on line of word under cursor
+nnoremap <Leader>r :s/<C-R>=expand('<cword>')<CR>/
+" replace all occurances in file of word under cursor
+nnoremap <Leader>R :%s/<C-R>=expand('<cword>')<CR>/
 
 "" s
 ""=====================================
 
-nnoremap <Leader>s :s/|                               " replace in line
-nnoremap <Leader>S :%s/|                              " replace in entire file
-vnoremap s :sort<CR>|                                 " sort highlighted lines
-vnoremap S :s/\s\+/\r/g<CR>:'[,sort<CR>:,']j<CR>|     " sort words on single line
+" replace in line
+nnoremap <Leader>s :s/
+" replace in entire file
+nnoremap <Leader>S :%s/
+" sort highlighted lines
+vnoremap s :sort<CR>
+" sort words on single line
+vnoremap S :s/\s\+/\r/g<CR>:'[,sort<CR>:,']j<CR>
   ":s/\s\+/\r/g " break the line into multiple ones
   ":'[,sort " sort them
   ":,']j " join them
-nnoremap <Leader>sp :set paste<CR>|                   " set paste mode
+" set paste mode
+nnoremap <Leader>sp :set paste<CR>
 " inoremap <Leader><C-s> )
 
 "" t
 ""=====================================
 
-"nmap <Leader>t :Tags<CR>| " open tag fuzzy finder (fzf)
-" nmap <Leader>t :split<CR>:terminal<CR>i| " open terminal in horizontal split
+" open tag fuzzy finder (fzf)
+"nmap <Leader>t :Tags<CR>
+" open terminal in horizontal split
+" nmap <Leader>t :split<CR>:terminal<CR>i
 
 "" u
 ""=====================================
@@ -190,61 +246,103 @@ nnoremap <Leader>sp :set paste<CR>|                   " set paste mode
 "" v
 ""=====================================
 
-nmap <leader>vc :Commands<CR>| " open vim commands file fuzzy finder (fzf)
+" open vim commands file fuzzy finder (fzf)
+nmap <leader>vc :Commands<CR>
 
 "" w
 ""=====================================
-noremap <Leader>w :w<cr>|     " write buffer in normal mode
-nnoremap <Leader>W :wq<cr>|   " write buffer and quit in normal mode
+" write buffer in normal mode
+noremap <Leader>w :w<cr>
+" write buffer and quit in normal mode
+nnoremap <Leader>W :wq<cr>
 
 "" y
 ""=====================================
 
-nmap <Leader>y :YRShow<cr>|   " search previously copied text
-nmap Y y$|                " Yank a line with Y.
+" search previously copied text
+nmap <Leader>y :YRShow<cr>
+" Yank a line with Y.
+nnoremap Y y$
 
 "" z
 ""=====================================
 
-noremap zC [s1z=|   " replaces last misspelled word with 1st correct suggestion
-noremap zc ]s1z=|   " replaces next misspelled word with 1st correct suggestion
+" replaces last misspelled word with 1st correct suggestion
+noremap zC [s1z=
+" replaces next misspelled word with 1st correct suggestion
+noremap zc ]s1z=
 
 "" symbols
 ""=====================================
 
-noremap <silent><expr><leader>/ incsearch#go(<SID>config_easyfuzzymotion())|  " Use incsearch.vim and EasyMotion for every search
+" Use incsearch.vim and EasyMotion for every search
+" https://github.com/haya14busa/incsearch-easymotion.vim
+"map / <Plug>(incsearch-easymotion-/)
+"map ? <Plug>(incsearch-easymotion-?)
+"map g/ <Plug>(incsearch-easymotion-stay)
 
-nnoremap <leader>= :split<cr>|     " split screen horizontally
-nnoremap <leader>\| :vsplit<cr>|   " split screen horizontally
+map / <Plug>(incsearch-easymotion-/)
+map ? <Plug>(incsearch-easymotion-?)
+map g/ <Plug>(incsearch-easymotion-stay)
 
-nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>| " With this mappings, if 'smartcase' is on and you press * while on the word "The", you will only find "The" (case sensitive), but if you press * while on the word "the", the search will not be case sensitive.
-nnoremap <leader>* :noh<CR> | " un-highlights all words
+" split screen horizontally
+nnoremap <leader>= :split<cr>
+" split screen horizontally
+nnoremap <leader>\| :vsplit<cr>
 
-nnoremap ' `| " Better mark jumping (line + col)
-noremap `` ~i<esc>|      " Use `` to change the case of a character
+" With this mappings, if 'smartcase' is on and you press * while on the word "The", you will only find "The" (case sensitive), but if you press * while on the word "the", the search will not be case sensitive.
+nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
+" un-highlights all words
+nnoremap <leader>* :noh<CR> 
 
-" inoremap '' "|     " Use '' as " to avoid using shift
-" inoremap ,, <|     " Use ,, as < to avoid using shift
-" inoremap .. >|     " Use .. as > to avoid using shift
-" inoremap ;; :|     " Use ;; as : to avoid using shift
-" inoremap [[ {|     " Use [[ as { to avoid using shift
-" inoremap \\ \||    " Use \\ as | to avoid using shift
-" inoremap ]] }|     " Use ]] as } to avoid using shift
-" inoremap `` ~|     " Use `` as ~ to avoid using shift
+" Better mark jumping (line + col)
+nnoremap ' `
+" Use `` to change the case of a character
+noremap `` ~i<esc>
 
-nnoremap <silent><leader><c-]> <c-w><c-]>| " Open tag in a new split
+" Use '' as " to avoid using shift
+" inoremap '' "
+" Use ,, as < to avoid using shift
+" inoremap ,, <
+" Use .. as > to avoid using shift
+" inoremap .. >
+" Use ;; as : to avoid using shift
+" inoremap ;; :
+" Use [[ as { to avoid using shift
+" inoremap [[ {
+" Use \\ as | to avoid using shift
+" inoremap \\ \|
+" Use ]] as } to avoid using shift
+" inoremap ]] }
+" Use `` as ~ to avoid using shift
+" inoremap `` ~
+
+" Open tag in a new split
+nnoremap <silent><leader><c-]> <c-w><c-]>
 
 " search google for word under cursor
-nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
-xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
+" nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
+" xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
 
 " open 'I feel lucky' google result for word under cursor
-nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
-xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
+"nnoremap <silent><localleader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
+"nnoremap <silent><localleader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
+"xnoremap <silent><localleader>? "gy:call <SID>goog(@g, 0)<cr>gv
+"xnoremap <silent><localleader>! "gy:call <SID>goog(@g, 1)<cr>gv
 
 " Stay in visual mode when indenting.
 vnoremap < <gv
 vnoremap > >gv
+
+" make ; always "find" forward and , backward
+"nnoremap <expr> ; getcharsearch().forward ? ';' : ','
+"nnoremap <expr> , getcharsearch().forward ? ',' : ';'
+
+" make ; and , be on the same key so that I can find using same key
+"nnoremap : ,
+"nnoremap ' :
+"nnoremap ` '
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -8,11 +8,10 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export GOPATH=$HOME/go
 export KUBECONFIG=$HOME/.kube/config
 
-export PIP_REQUIRE_VENV=true
+PIP_REQUIRE_VIRTUALENV=true
 function source-file(){
     [[ -s "$1" ]] && source "$1"
 }
-export PIP_REQUIRE_VENV=true
 
 
 # Append history list to the history file; this is the default but we make sure
@@ -157,3 +156,7 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/plugins.zsh
 source ~/.zsh/variables.zsh
 source ~/.zsh/completions.zsh
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
