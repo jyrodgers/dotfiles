@@ -45,10 +45,10 @@ set updatetime=100                     " If this many milliseconds nothing is ty
 set visualbell                         " Use visual bell instead of noise
 
 " Spell Checking
-" highlight clear SpellBad
-" highlight clear SpellCap
-" highlight clear SpellLocal
-" highlight clear SpellRare
+ highlight clear SpellBad
+ highlight clear SpellCap
+ highlight clear SpellLocal
+ highlight clear SpellRare
 
 " window splits & ruler were too bright - change to white on grey " (shouldn't change GUI or non-color term appearance)
 " highlight StatusLine   cterm=NONE ctermbg=blue ctermfg=white
