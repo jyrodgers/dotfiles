@@ -22,6 +22,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'rhysd/committia.vim'
+Plug 'vimwiki/vimwiki' 
+Plug 'michal-h21/vim-zettel'
 
 
 
