@@ -23,5 +23,7 @@
 	<integer>1</integer>
 	<key>snippetKeywordEnabled</key>
 	<false/>
+	<key>snippetsWhenSearching</key>
+	<false/>
 </dict>
 </plist>
